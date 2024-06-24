@@ -32,14 +32,12 @@ const HeroSection = (props) => {
 
     const theme = useTheme()
     const isXSmall = useMediaQuery(theme.breakpoints.down('sm'))
-
+    console.log('bannersection', banner_section_image_base_url)
     return (
         <>
             {!isLoading && (
                 <LandingHeroBox
-                    banner_section_image_base_url={
-                        banner_section_image_base_url
-                    }
+                    banner_section_image_base_url={banner_section_image}
                     heroImg={heroImg}
                     isXSmall={isXSmall}
                     ImageNotFound={ImageNotFound}

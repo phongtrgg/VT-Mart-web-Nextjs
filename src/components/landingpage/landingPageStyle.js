@@ -54,9 +54,7 @@ export const LandingHeroBox = styled(Box)(
         isXSmall,
     }) => ({
         backgroundImage: `url(${
-            heroImg
-                ? `${banner_section_image_base_url}/${heroImg}`
-                : ImageNotFound.src
+            heroImg ? `${banner_section_image_base_url}` : ImageNotFound.src
         })`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -64,6 +62,6 @@ export const LandingHeroBox = styled(Box)(
         backgroundPosition: 'center',
         marginInline: isXSmall && '15px',
         borderRadius: isXSmall && '5px',
-        paddingTop: isXSmall ? "0px":"83px"
+        paddingTop: isXSmall ? '0px' : '83px',
     })
 )
