@@ -90,7 +90,7 @@ export const vietnam = {
         'Đăng ký làm người giao hàng và kiếm tiền',
     'All the best restaurants are one click away':
         'Tất cả các nhà hàng tốt nhất chỉ cách một cú nhấp chuột',
-    'Remember me': 'Lưu mật khẩu2',
+    'Remember me': 'Lưu mật khẩu',
     'Forgot Password': 'Quên mật khẩu',
     'Popular in your area': 'Phổ biến trong khu vực của bạn',
     Login: 'Đăng nhập',
