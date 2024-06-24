@@ -20,6 +20,7 @@ const DownloadSection = ({
 }) => {
     const { t } = useTranslation()
     console.log(
+        'download_app_image_urls',
         `${download_app_image_urls}/${download_app_data?.react_download_apps_image}`
     )
     return (
@@ -39,7 +40,7 @@ const DownloadSection = ({
                                 <CustomImageContainer
                                     src={
                                         download_app_data?.react_download_apps_image
-                                            ? `${download_app_image_urls}/${download_app_data?.react_download_apps_image}`
+                                            ? `${download_app_data?.react_download_apps_image}`
                                             : imageNotFoundPlaceholder.src
                                     }
                                     height="471px"

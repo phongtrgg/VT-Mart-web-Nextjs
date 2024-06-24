@@ -26,6 +26,7 @@ const FooterMiddle = ({ landingPageData, isLoading }) => {
     const isSmall = useMediaQuery(theme.breakpoints.down('sm'))
     const isXSmall = useMediaQuery(theme.breakpoints.down('md'))
     const businessLogo = global?.logo
+    console.log(businessLogo)
     return (
         <CustomStackFullWidth
             alignItems="center"
