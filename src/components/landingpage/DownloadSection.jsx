@@ -19,6 +19,9 @@ const DownloadSection = ({
     download_app_image_urls,
 }) => {
     const { t } = useTranslation()
+    console.log(
+        `${download_app_image_urls}/${download_app_data?.react_download_apps_image}`
+    )
     return (
         <CustomContainer>
             <CustomStackFullWidth

@@ -66,6 +66,10 @@ const LandingPage = (props) => {
     useEffect(() => {
         dispatch(setGlobalSettings(global))
     }, [])
+    console.log(
+        'landingPageData',
+        landingPageData?.base_urls?.react_services_image_url
+    )
     return (
         <NoSsr>
             <CssBaseline />
@@ -87,9 +91,7 @@ const LandingPage = (props) => {
                 global={global}
                 react_feature={landingPageData?.react_services}
                 isLoading={isLoading}
-                fun_base_url={
-                    landingPageData?.base_urls?.react_services_image_url
-                }
+                fun_base_url={''}
             />
             <BannerSection
                 global={global}

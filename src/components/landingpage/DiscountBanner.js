@@ -19,7 +19,7 @@ const DiscountBanner = ({ discount_banner, global, discount_banner_url }) => {
                     discount_banner && (
                         <DiscountBannerBox
                             sx={{
-                                backgroundImage: `url(${`${discount_banner_url}/${discount_banner}`})`,
+                                backgroundImage: `url(${`${discount_banner}`})`,
                             }}
                         ></DiscountBannerBox>
                     )

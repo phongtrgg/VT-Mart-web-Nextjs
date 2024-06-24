@@ -226,21 +226,27 @@ const BannerSection = ({
                                                     <Card
                                                         elevation={0}
                                                         sx={{
-                                                            backgroundImage: `url(${typeof item.image ===
+                                                            backgroundImage: `url(${
+                                                                typeof item.image ===
                                                                 'string'
-                                                                ? `${promotional_banner_image_url}/${item.image}`
-                                                                : ImageNotFound.src
-                                                                })`,
+                                                                    ? `${item.image}`
+                                                                    : ImageNotFound.src
+                                                            })`,
                                                             height: '100%',
-                                                            width: "100%",
-                                                            backgroundSize: 'cover',
-                                                            backgroundRepeat: 'no-repeat',
+                                                            width: '100%',
+                                                            backgroundSize:
+                                                                'cover',
+                                                            backgroundRepeat:
+                                                                'no-repeat',
                                                             borderRadius: '4px',
-                                                            backgroundPosition: 'center',
-                                                            transition: "transform .3s ease-in-out",
-                                                            "&:hover": {
-                                                                transform: "scale(1.03)",
-                                                            }
+                                                            backgroundPosition:
+                                                                'center',
+                                                            transition:
+                                                                'transform .3s ease-in-out',
+                                                            '&:hover': {
+                                                                transform:
+                                                                    'scale(1.03)',
+                                                            },
                                                         }}
                                                     >
                                                         <Stack
