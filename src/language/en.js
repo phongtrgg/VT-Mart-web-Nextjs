@@ -1,6 +1,8 @@
 export const english = {
-    "only":"only",
-    "items available":"items available",
+    english: 'English',
+    vietnamese: 'Vietnamese',
+    only: 'only',
+    'items available': 'items available',
     'Welcome to React': 'Welcome to React and react-i18next',
     'Dont have a cutlery? Restaurant will provide you.':
         'Dont have a cutlery? Restaurant will provide you.',
