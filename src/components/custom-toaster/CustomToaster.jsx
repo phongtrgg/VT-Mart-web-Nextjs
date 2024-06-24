@@ -97,6 +97,7 @@ export const CustomToasterTokenExpired = (title, subtitle) => {
 }
 
 export const CustomToaster = (status, title,id=null, subtitle, icon, borderColor, isClose) => {
+  console.log({status});
   let toasterIcon;
   if (icon) {
     toasterIcon = icon

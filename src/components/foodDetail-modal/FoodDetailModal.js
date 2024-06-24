@@ -96,9 +96,10 @@ const FoodDetailModal = ({
         useAddCartItem()
     const { mutate: updateMutate } = useCartItemUpdate()
     const { mutate: deleteCartItemMutate } = useDeleteAllCartItem()
-
+    console.log({ cartList })
 
     const itemSuccess = (res) => {
+        console.log({ res })
         if (res) {
             handleInitialTotalPriceVarPriceQuantitySet(
                 res,
@@ -251,6 +252,7 @@ const FoodDetailModal = ({
         }
     }
 
+    console.log({product});
     const handleAddUpdate = () => {
         if (productUpdate) {
             console.log({selectedOptions});
@@ -412,7 +414,7 @@ const FoodDetailModal = ({
             handleCampaignOrder()
         }
     }
-
+    console.log({ quantity })
     const handleRequiredItemsToaster = (itemsArray, selectedOptions) => {
         itemsArray?.forEach((item) => {
             if (selectedOptions.length > 0) {
@@ -505,6 +507,7 @@ const FoodDetailModal = ({
 
         return isTrue
     }
+    console.log({ selectedOptions })
     const handleAddToCartOnDispatch = (checkingFor) => {
         let requiredItemsList = []
         modalData?.[0]?.variations?.forEach((item, index) => {
@@ -594,7 +597,7 @@ const FoodDetailModal = ({
         }
     }
     const addToCard = () => {
-
+        console.log('call', selectedOptions?.length)
         if (location) {
             let checkingFor = 'cart'
             if (
@@ -830,6 +833,7 @@ const FoodDetailModal = ({
         }
     }
     const radioCheckHandler = (choiceIndex, option, optionIndex) => {
+        console.log({ selectedOptions })
         const isExist = selectedOptions?.find(
             (sOption) =>
                 sOption.choiceIndex === choiceIndex &&
@@ -876,6 +880,7 @@ const FoodDetailModal = ({
     //     });
     // };
 
+    console.log({ quantity })
     const incrementPrice = () => {
         const isLimitedOrDaily = modalData[0]?.stock_type !== 'unlimited'
         const maxCartQuantity = modalData[0]?.maximum_cart_quantity
@@ -1047,6 +1052,8 @@ const FoodDetailModal = ({
 
     const text1=t("only")
     const text2=t("items available")
+
+    console.log('isDisabled', selectedOptions)
     return (
         <>
             <Modal

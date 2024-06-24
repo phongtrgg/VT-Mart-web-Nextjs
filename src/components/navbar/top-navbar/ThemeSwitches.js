@@ -32,7 +32,7 @@ const ThemeSwitches = ({ noText }) => {
         }
         setValues({ ...values, theme: event.target.checked ? 'light' : 'dark' })
     }
-
+    console.log({values});
 
     return (
         <Stack

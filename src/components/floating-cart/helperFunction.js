@@ -4,7 +4,7 @@ import { calculateItemBasePrice, getConvertDiscount } from "@/utils/customFuncti
 import { incrementProductQty } from "@/redux/slices/cart";
 
 export const getItemDataForAddToCart = (values,updateQuantity, mainPrice,guest_id) => {
-
+  console.log({values});
   let totalQty = 0;
   return {
     guest_id: guest_id,

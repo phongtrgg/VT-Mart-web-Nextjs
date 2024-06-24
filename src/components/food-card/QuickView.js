@@ -64,7 +64,7 @@ const QuickView = (props) => {
         horizontal
     } = props;
     const theme = useTheme();
-
+    console.log({product});
     return (
         <CustomStackFullWidth
             direction="row"

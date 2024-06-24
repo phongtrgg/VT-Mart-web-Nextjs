@@ -199,7 +199,7 @@ const Reorder = ({ orderData, orderZoneId }) => {
         const isZoneExist = orderAbleZoneIds?.length > 0 && orderAbleZoneIds.find(item => item === orderZoneId)
         if (isZoneExist) {
             const reorderAbleItem = getReorderAbleItems(data?.data, orderData)
-
+            console.log({orderData});
             if (reorderAbleItem?.length > 0) {
                 const item_list = reorderAbleItem.map(rItem => {
                     let similar = []
@@ -214,6 +214,7 @@ const Reorder = ({ orderData, orderZoneId }) => {
                             similar.push(item)
                         }
                     })
+                    console.log({similar});
                     if (similar?.length > 0) {
                         let selectedOptions = []
                         const similarVariations = getSimilarVariations(rItem.variations, similar?.[0]?.variation)
@@ -242,6 +243,7 @@ const Reorder = ({ orderData, orderZoneId }) => {
                         )
                         let totalPrice = (itemsBasePrice * similar?.[0]?.quantity)
                         let totalQty = 0;
+                        console.log("vvvv",getSimilarVariations(rItem.variations, similar?.[0]?.variation));
 
                         return {
                             model: rItem.available_date_starts ? "ItemCampaign" : "Food",

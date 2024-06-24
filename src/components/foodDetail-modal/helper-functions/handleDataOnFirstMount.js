@@ -10,7 +10,7 @@ export const handleInitialTotalPriceVarPriceQuantitySet = (
     setSelectedOptions,
     setTotalWithoutDiscount
 ) => {
-
+    console.log({product});
     setModalData([product])
     if (productUpdate) {
         setTotalPrice(product.totalPrice)
@@ -28,7 +28,7 @@ export const handleInitialTotalPriceVarPriceQuantitySet = (
     }
     let selectedOption = []
     if (product?.variations?.length > 0) {
-
+        console.log({product});
         product?.variations?.forEach((item) => {
             if (item?.values?.length > 0) {
                 item?.values?.forEach((value) => {

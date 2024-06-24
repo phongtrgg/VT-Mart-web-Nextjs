@@ -52,8 +52,9 @@ export const getSelectedVariations = (variations) => {
                         optionIndex: optionIndex,
                         optionPrice: value?.optionPrice,
                         current_stock: value?.current_stock,
-                        option_id: value?.option_id,
-                        stock_type: value?.stock_type,
+                        option_id:value?.option_id,
+                        stock_type:value?.stock_type
+
 
                         // type:item?.
                     }
@@ -280,7 +281,7 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
         <NoSsr>
             <CustomNavBox isSticky={isSticky}>
                 <CustomContainer>
-                    <Toolbar disablegutters="true">
+                    <Toolbar disableGutters={true}>
                         <CustomStackFullWidth
                             ref={searchBoxRef}
                             direction="row"

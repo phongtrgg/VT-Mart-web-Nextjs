@@ -22,7 +22,7 @@ const FoodModalTopSection = ({
     addToFavorite,
     deleteWishlistItem,
 }) => {
-
+    console.log({product});
     const router = useRouter()
     let languageDirection = undefined
     if (typeof window !== 'undefined') {
