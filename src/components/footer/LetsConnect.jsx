@@ -30,7 +30,7 @@ const LetsConnect = ({ languageDirection, web }) => {
                     Lets Connect !
                 </Typography>
                 <Typography className="subtitle font-signika-negative">
-                    Stay upto date with restaurants and foods around you
+                    Stay upto date with restaurants and foods around you aljsdhákdhákjdhạkdh
                 </Typography>
                 <Paper
                     // variant="outlined"
