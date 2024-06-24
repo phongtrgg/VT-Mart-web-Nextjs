@@ -79,7 +79,7 @@ function App({ Component, pageProps, emotionCache = clientSideEmotionCache }) {
             window.location.reload()
         }
     }, [])
-    console.log('test')
+
     return (
         <CacheProvider value={emotionCache}>
             <QueryClientProvider client={queryClient}>

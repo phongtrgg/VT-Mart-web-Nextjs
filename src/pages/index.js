@@ -14,7 +14,7 @@ const Home = ({ configData, landingPageData }) => {
         if (configData && landingPageData) {
             // Check if both are empty arrays
             if (configData.length === 0 && landingPageData.length === 0) {
-                router.push('/404')
+                // router.push('/404')
                 return // Prevent further execution
             }
             if (configData.maintenance_mode) {
@@ -45,7 +45,6 @@ const Home = ({ configData, landingPageData }) => {
 export default Home
 
 export const getServerSideProps = async (context) => {
-    console.log('context', context)
     const { req } = context
     const language = req.cookies.languageSetting
     const configRes = await fetch(

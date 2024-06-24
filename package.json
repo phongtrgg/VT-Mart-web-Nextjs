@@ -68,7 +68,7 @@
         "yup": "^0.32.11"
     },
     "scripts": {
-        "dev": "next dev -H minimart.com -p 443",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start -p 3000"
     },

@@ -23,7 +23,6 @@ const messaging = (async () => {
         if (isSupportedBrowser) {
             return getMessaging(firebaseApp)
         }
-
         return null
     } catch (err) {
         return null

@@ -17,7 +17,6 @@ import MultistepFormWithSteppers from './gurbage/admin/components/multistep-form
 import NotFound from './gurbage/error/NotFound'
 import ServiceZones from './gurbage/admin/ServiceZones'
 
-
 const HomePage = React.lazy(() => import('./gurbage/home/HomePage'))
 const SignIn = React.lazy(() => import('./gurbage/auth/SignIn'))
 const SignUp = React.lazy(() => import('./gurbage/auth/SignUp'))
