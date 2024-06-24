@@ -24,7 +24,7 @@ const CustomerInfo = () => {
                         ? (theme) => theme.palette.neutral[100]
                         : (theme) => theme.palette.neutral[400],
                 }}
-                src={`${customerbaseUrl}/${userData?.image}`}
+                src={`${userData?.image}`}
             />
             <CustomStackFullWidth>
                 <Typography fontSize="1rem" fontWeight="600">
@@ -36,7 +36,7 @@ const CustomerInfo = () => {
                     fontWeight="400"
                     color={theme.palette.neutral[500]}
                     sx={{ direction: theme.direction === 'rtl' ? 'rtl' : '' }}
-                    textAlign={theme.direction === 'rtl'?"end":"start"}
+                    textAlign={theme.direction === 'rtl' ? 'end' : 'start'}
                 >
                     {userData?.phone}
                 </Typography>

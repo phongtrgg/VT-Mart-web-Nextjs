@@ -52,9 +52,8 @@ export const getSelectedVariations = (variations) => {
                         optionIndex: optionIndex,
                         optionPrice: value?.optionPrice,
                         current_stock: value?.current_stock,
-                        option_id:value?.option_id,
-                        stock_type:value?.stock_type
-
+                        option_id: value?.option_id,
+                        stock_type: value?.stock_type,
 
                         // type:item?.
                     }
@@ -142,6 +141,7 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
             dispatch(setOfflineWithPartials(false))
         }
     }, [])
+    console.log(`${userData?.image}`)
     const handleAuthBasedOnRoute = () => {
         return (
             <RTL direction={languageDirection}>
@@ -234,7 +234,7 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
                                             : (theme) =>
                                                   theme.palette.neutral[400],
                                     }}
-                                    src={`${customerbaseUrl}/${userData?.image}`}
+                                    src={`${userData?.image}`}
                                 />
                             </Box>
                         </Stack>
