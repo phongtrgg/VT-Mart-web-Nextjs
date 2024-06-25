@@ -174,6 +174,7 @@ const Banner = ({ bannerIsLoading }) => {
             },
         ],
     }
+    console.log('bannerData', bannerData)
 
     return (
         <CustomStackFullWidth

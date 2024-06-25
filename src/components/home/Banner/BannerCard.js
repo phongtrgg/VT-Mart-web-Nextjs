@@ -19,7 +19,7 @@ const BannerCard = (props) => {
     const globalImageUrl = banner?.available_date_ends
         ? global?.base_urls?.campaign_image_url
         : global?.base_urls?.banner_image_url
-    const bannerImage = `${globalImageUrl}/${banner?.image}`
+    const bannerImage = `${banner?.image}`
 
     return (
         <CustomStackFullWidth onClick={() => handleBannerClick(banner)}>
