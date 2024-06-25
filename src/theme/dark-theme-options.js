@@ -51,7 +51,7 @@ const skeletonColorAfter =
 const primary = {
     main: '#1F8505',
     light: '#ff6700',
-    dark: '#79B669',
+    dark: '#246E10',
     contrastText: neutral[900],
     midPrimary: '#031C3A',
     overLay: '#000000',

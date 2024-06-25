@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {
     CustomColouredTypography,
     CustomStackFullWidth,
-} from "@/styled-components/CustomStyles.style"
+} from '@/styled-components/CustomStyles.style'
 import {
     alpha,
     Button,
@@ -15,8 +15,8 @@ import {
 } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { CustomTypographyGray } from '../error/Errors.style'
-import { usePostNewsletterEmail } from "@/hooks/react-query/newsletter/usePostNewsletterEmail"
-import { onErrorResponse } from "../ErrorResponse";
+import { usePostNewsletterEmail } from '@/hooks/react-query/newsletter/usePostNewsletterEmail'
+import { onErrorResponse } from '../ErrorResponse'
 import LoadingButton from '@mui/lab/LoadingButton'
 import CustomContainer from '../container'
 import CustomImageContainer from '../CustomImageContainer'
@@ -28,7 +28,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { Stack } from '@mui/system'
 import { RTL } from '../RTL/RTL'
 import { CustomToaster } from '../custom-toaster/CustomToaster'
-import FooterBG from "../../../public/static/footer/footerBG.png"
+import FooterBG from '../../../public/static/footer/footerBG.png'
 
 const FooterTop = ({ landingPageData }) => {
     const theme = useTheme()
@@ -43,7 +43,7 @@ const FooterTop = ({ landingPageData }) => {
         // toast.success(t('Subscribed Successfully'), {
         //     id: 'subscribed-toaster',
         // })
-        CustomToaster('success', 'Subscribed Successfully.');
+        CustomToaster('success', 'Subscribed Successfully.')
         setEmailAddress('')
         setErrorText(null)
     }
@@ -71,26 +71,42 @@ const FooterTop = ({ landingPageData }) => {
                 backgroundImage: `url(${FooterBG.src})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition:"center"
+                backgroundPosition: 'center',
             }}
         >
-            <CustomStackFullWidth minHeight="144px" sx={{ backgroundColor: (theme) =>theme.palette.mode === 'dark' ? alpha(theme.palette.secondary.main, 0.7): alpha(theme.palette.primary.light, 0.3), }}>
+            <CustomStackFullWidth
+                minHeight="144px"
+                sx={{
+                    backgroundColor: (theme) =>
+                        theme.palette.mode === 'dark'
+                            ? alpha(theme.palette.secondary.main, 0.7)
+                            : alpha(theme.palette.primary.light, 0.3),
+                }}
+            >
                 <CustomContainer>
-                    <Stack flexDirection={{ xs: "cloumn", sm: "row" }} alignItems="center" justifyContent="space-between" paddingBlock="20px">
-                        <CustomStackFullWidth alignItems={{ xs: "center", sm: "flex-start" }} gap="10px">
+                    <Stack
+                        flexDirection={{ xs: 'cloumn', sm: 'row' }}
+                        alignItems="center"
+                        justifyContent="space-between"
+                        paddingBlock="20px"
+                    >
+                        <CustomStackFullWidth
+                            alignItems={{ xs: 'center', sm: 'flex-start' }}
+                            gap="10px"
+                        >
                             <CustomColouredTypography
                                 variant="h3"
-                                color={"#141313"}
+                                color={'#141313'}
                                 fontweight="600"
                             >
                                 {landingPageData?.news_letter_title}
                             </CustomColouredTypography>
                             <Typography
                                 fontSize="14px"
-                                color={"#414141"}
+                                color={'#414141'}
                                 fontweight="400"
                                 maxWidth="300px"
-                                textAlign={{ xs: "center", sm: "left" }}
+                                textAlign={{ xs: 'center', sm: 'left' }}
                             >
                                 {landingPageData?.news_letter_sub_title}
                             </Typography>
@@ -105,13 +121,15 @@ const FooterTop = ({ landingPageData }) => {
                                     alignItems: 'center',
                                     width: '100%',
                                     maxWidth: '362px',
-                                    border: errorText && `1px solid ${theme.palette.error.light}`,
+                                    border:
+                                        errorText &&
+                                        `1px solid ${theme.palette.error.light}`,
                                     background: (theme) =>
                                         theme.palette.mode === 'dark'
                                             ? alpha(
-                                                theme.palette.neutral[100],
-                                                0.7
-                                            )
+                                                  theme.palette.neutral[100],
+                                                  0.7
+                                              )
                                             : theme.palette.whiteContainer.main,
                                 }}
                             >
@@ -137,10 +155,14 @@ const FooterTop = ({ landingPageData }) => {
                                                 type="submit"
                                                 onClick={handleSubmit}
                                                 sx={{
-                                                    background: `radial-gradient(50% 50% at 50% 50%, ${theme.palette.customColor.eight} 0%, ${theme.palette.customColor.nine} 100%)`,
+                                                    // background: `radial-gradient(50% 50% at 50% 50%, ${theme.palette.customColor.eight} 0%, ${theme.palette.customColor.nine} 100%)`,
+                                                    background: `green`,
                                                     borderRadius: '5px',
                                                     minWidth: '45px',
                                                     padding: '5px 10px',
+                                                    '&:hover': {
+                                                        background: '#246E10',
+                                                    },
                                                 }}
                                             >
                                                 <KeyboardArrowRightIcon
@@ -150,7 +172,7 @@ const FooterTop = ({ landingPageData }) => {
                                                                 .neutral[100],
                                                         transform:
                                                             languageDirection ===
-                                                            'rtl' &&
+                                                                'rtl' &&
                                                             'rotate(180deg)',
                                                     }}
                                                 />
@@ -159,13 +181,24 @@ const FooterTop = ({ landingPageData }) => {
                                     }
                                 />
                             </Paper>
-                            {errorText &&
-                                <Typography fontWeight={600} sx={{ padding: "5px", marginLeft: "15px", color: theme.palette.error.pureRed }} textAlign="left">* {errorText}</Typography>}
+                            {errorText && (
+                                <Typography
+                                    fontWeight={600}
+                                    sx={{
+                                        padding: '5px',
+                                        marginLeft: '15px',
+                                        color: theme.palette.error.pureRed,
+                                    }}
+                                    textAlign="left"
+                                >
+                                    * {errorText}
+                                </Typography>
+                            )}
                         </CustomStackFullWidth>
                     </Stack>
                 </CustomContainer>
             </CustomStackFullWidth>
-        </CustomStackFullWidth >
+        </CustomStackFullWidth>
     )
 }
 

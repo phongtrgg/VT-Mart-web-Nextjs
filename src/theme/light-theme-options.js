@@ -57,7 +57,7 @@ const divider = '#E6E8F0'
 const primary = {
     main: '#1F8505',
     light: 'rgba(255, 121, 24, 0.60)',
-    dark: '#79B669',
+    dark: '#246E10',
     contrastText: '#FFFFFF',
     midPrimary: ' #FFF5ED',
     overLay: '#000000',
