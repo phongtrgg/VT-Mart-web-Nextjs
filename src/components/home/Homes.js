@@ -257,7 +257,6 @@ const Homes = ({ configData }) => {
                         </CustomContainer>
                     </>
                 )}
-
                 <CustomModal
                     setModalOpen={handleCloseWelcomeModal}
                     openModal={welcomeModal}
@@ -312,7 +311,7 @@ const Homes = ({ configData }) => {
                         </Box>
                     </Box>
                 </CustomModal>
-                {getToken && <CashBackPopup />}
+                {getToken && <CashBackPopup />}-
             </PushNotificationLayout>
         </>
     )

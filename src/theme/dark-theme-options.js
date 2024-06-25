@@ -49,12 +49,14 @@ const skeletonColorAfter =
     'linear-gradient(78.58deg, #F5F6F8 3.23%, #FDFDFD 53.13%, #F6F7F8 100%)'
 
 const primary = {
-    main: '#1F8505',
+    main: '#79B669',
+    main: '#79B669',
     light: '#ff6700',
-    dark: '#246E10',
+    dark: '#79B669',
     contrastText: neutral[900],
     midPrimary: '#031C3A',
     overLay: '#000000',
+    hover: '#1F8505',
 }
 const paperBoxShadow = '#000000'
 

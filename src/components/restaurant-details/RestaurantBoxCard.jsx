@@ -75,7 +75,7 @@ const RestaurantBoxCard = (props) => {
         currencySymbolDirection = global.currency_symbol_direction
         digitAfterDecimalPoint = global.digit_after_decimal_point
     }
-    const logo = `${restaurantImageUrl}/${image}`
+    const logo = `${image}`
     const theme = useTheme()
 
     const settings = {
@@ -279,7 +279,7 @@ const RestaurantBoxCard = (props) => {
                             }}
                         >
                             <CustomImageContainer
-                                src={`${restaurantImageUrl}/${image}`}
+                                src={`${image}`}
                                 width="100%"
                                 height="100%"
                                 objectFit="cover"
@@ -321,17 +321,18 @@ const RestaurantBoxCard = (props) => {
                                 align="left"
                                 fontSize="12px"
                                 color={theme.palette.neutral[600]}
-                                sx={{WebkitLineClamp:'1 !important'}}
+                                sx={{ WebkitLineClamp: '1 !important' }}
                             >
-                            {characteristics?.length > 0 &&
-                                characteristics?.map((item, index) => (
+                                {characteristics?.length > 0 &&
+                                    characteristics?.map((item, index) => (
                                         <>
-                                            {item} {" "}
-                                            {characteristics.length - 1 === index
+                                            {item}{' '}
+                                            {characteristics.length - 1 ===
+                                            index
                                                 ? ''
                                                 : ','}
                                         </>
-                                ))}
+                                    ))}
                             </CustomTypographyEllipsis>
                         </Stack>
                         {visitAgain && foods?.length > 0 && (
@@ -343,7 +344,7 @@ const RestaurantBoxCard = (props) => {
                                             width="30px"
                                             borderRadius="8px"
                                             objectFit="cover"
-                                            src={`${global?.base_urls?.product_image_url}/${item?.image}`}
+                                            src={`${item?.image}`}
                                         />
                                     )
                                 })}
