@@ -253,7 +253,6 @@ const Homes = ({ configData }) => {
                         </CustomContainer>
                     </>
                 )}
-
                 <CustomModal
                     setModalOpen={handleCloseWelcomeModal}
                     openModal={welcomeModal}
@@ -281,17 +280,26 @@ const Homes = ({ configData }) => {
                             />
                         </Box>
                         <Box mt={2}>
-                            <Typography variant="h5" mb={1} color={theme.palette.neutral[1000]}>
+                            <Typography
+                                variant="h5"
+                                mb={1}
+                                color={theme.palette.neutral[1000]}
+                            >
                                 {t('Welcome to ' + configData?.business_name)}
                             </Typography>
-                            <Typography variant="body2" lineHeight={'1.5'} color={theme.palette.neutral[1000]}>
+                            <Typography
+                                variant="body2"
+                                lineHeight={'1.5'}
+                                color={theme.palette.neutral[1000]}
+                            >
                                 {userData?.is_valid_for_discount
                                     ? t(
                                           `Get ready for a special welcome gift, enjoy a special discount on your first order within `
                                       ) +
                                       userData?.validity +
                                       '.'
-                                    : ''}{'  '}
+                                    : ''}
+                                {'  '}
                                 {t(
                                     `  Start exploring the best services around you.`
                                 )}
@@ -299,7 +307,7 @@ const Homes = ({ configData }) => {
                         </Box>
                     </Box>
                 </CustomModal>
-                {getToken && <CashBackPopup />}
+                {getToken && <CashBackPopup />}-
             </PushNotificationLayout>
         </>
     )
