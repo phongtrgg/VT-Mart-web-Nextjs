@@ -259,7 +259,7 @@ const LatestRestaurantCard = (props) => {
                                     </Stack>
                                 )}
                                 <CustomImageContainer
-                                    src={`${restaurantImageUrl?.restaurant_cover_photo_url}/${image}`}
+                                    src={`${image}`}
                                     width="100%"
                                     height="100%"
                                     objectFit="cover"
