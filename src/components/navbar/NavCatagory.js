@@ -177,7 +177,7 @@ const NavCatagory = ({
                                                             >
                                                                 <ListItemIcon>
                                                                     <CustomImageContainer
-                                                                        src={`${catImageUrl}/${category.image}`}
+                                                                        src={`${category.image}`}
                                                                         width="35px"
                                                                         height="35px"
                                                                         loading="lazy"
@@ -252,7 +252,7 @@ const NavCatagory = ({
                                                             >
                                                                 <ListItemIcon>
                                                                     <CustomImageContainer
-                                                                        src={`${catImageUrl}/${category.image}`}
+                                                                        src={`${category.image}`}
                                                                         width="35px"
                                                                         height="35px"
                                                                         loading="lazy"
@@ -332,7 +332,7 @@ const NavCatagory = ({
                                                         >
                                                             <ListItemIcon>
                                                                 <CustomImageContainer
-                                                                    src={`${catImageUrl}/${category.image}`}
+                                                                    src={`${category.image}`}
                                                                     width="35px"
                                                                     height="35px"
                                                                     loading="lazy"
@@ -401,7 +401,7 @@ const NavCatagory = ({
                                                         >
                                                             <ListItemIcon>
                                                                 <CustomImageContainer
-                                                                    src={`${catImageUrl}/${category.image}`}
+                                                                    src={`${category.image}`}
                                                                     width="35px"
                                                                     height="35px"
                                                                     loading="lazy"

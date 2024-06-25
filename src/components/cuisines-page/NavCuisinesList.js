@@ -29,7 +29,7 @@ const NavCuisinesList = ({ item, handledropClose, cuisinesImageUrl }) => {
             >
                 <ListItemIcon>
                     <CustomImageContainer
-                        src={`${cuisinesImageUrl}/${item.image}`}
+                        src={`${item.image}`}
                         width="35px"
                         height="35px"
                         loading="lazy"

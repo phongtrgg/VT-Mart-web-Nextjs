@@ -53,7 +53,7 @@ const FoodCard = ({
     const { t } = useTranslation()
     const { global } = useSelector((state) => state.globalSettings)
     const { token } = useSelector((state) => state.userToken)
-    const imageUrl = `${productImageUrl}/${image}`
+    const imageUrl = `${image}`
     const [modalData, setModalData] = useState([])
     const [incrOpen, setIncrOpen] = useState(false)
     let location = undefined

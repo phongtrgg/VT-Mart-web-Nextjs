@@ -25,10 +25,9 @@ const RestaurantRightDetails = ({ details, restaurantCoverUrl, data }) => {
                     position: !isSmall && 'relative',
                     background: (theme) => theme.palette.neutral[100],
                 }}
-
             >
                 <CustomImageContainer
-                    src={`${restaurantCoverUrl}/${details.cover_photo}`}
+                    src={`${details.cover_photo}`}
                     height="250px"
                     smHeight="120px"
                     width="100%"

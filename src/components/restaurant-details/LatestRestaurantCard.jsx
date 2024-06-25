@@ -279,7 +279,7 @@ const LatestRestaurantCard = (props) => {
                                 padding={{ xs: '5px', md: '10px' }}
                             >
                                 <CustomImageContainer
-                                    src={`${restaurantImageUrl?.restaurant_image_url}/${logo}`}
+                                    src={`${logo}`}
                                     width={{ xs: '30px', md: '50px' }}
                                     height={{ xs: '30px', md: '50px' }}
                                     objectFit="cover"
