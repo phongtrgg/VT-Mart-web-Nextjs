@@ -2,6 +2,8 @@ export const english = {
     english: 'English',
     vietnamese: 'Vietnamese',
     only: 'only',
+    'No Restaurants found': 'No Restaurants found',
+    'No category found': 'No category found',
     'items available': 'items available',
     'Welcome to React': 'Welcome to React and react-i18next',
     'Dont have a cutlery? Restaurant will provide you.':
@@ -828,7 +830,7 @@ export const english = {
     'Please wait sometimes': 'Please wait sometimes',
     'No Cuisine Restaurant Found': 'No Cuisine Store Found',
     'Cuisine Restaurant': 'Cuisine Store',
-    Cuisines: 'Cuisines',
+    Cuisines: 'Area',
     RecommendProduct: 'RecommendProduct',
     'Cancel Reason': 'Cancel Reason',
     'You can not Order more then  on COD order':

@@ -3,7 +3,7 @@ import {
     CustomStackFullWidth,
     CustomViewAll,
     SliderCustom,
-} from "@/styled-components/CustomStyles.style"
+} from '@/styled-components/CustomStyles.style'
 import CustomShimmerCategories from '../../CustomShimmer/CustomShimmerCategories'
 import { Grid, IconButton, Stack, Typography } from '@mui/material'
 import { CustomTypography } from '../../custom-tables/Tables.style'
@@ -99,7 +99,7 @@ const Cuisines = () => {
                     {!cuisines ? (
                         <CustomStackFullWidth
                             spacing={1}
-                            paddingTop={{ xs: "1rem", sm: "1.9rem" }}
+                            paddingTop={{ xs: '1rem', sm: '1.9rem' }}
                         >
                             <Skeleton
                                 width={120}
@@ -116,7 +116,9 @@ const Cuisines = () => {
                         cuisines?.length > 0 && (
                             <Grid
                                 container
-                                sx={{ paddingTop: { xs: "1rem", sm: "1.9rem" } }}
+                                sx={{
+                                    paddingTop: { xs: '1rem', sm: '1.9rem' },
+                                }}
                                 gap="1.2rem"
                             >
                                 <Grid item xs={12} md={12}>
@@ -125,26 +127,43 @@ const Cuisines = () => {
                                         alignItems="center"
                                         justifyContent="space-between"
                                     >
-                                        <Stack direction="row" justifyContent="space-between" width="100%">
+                                        <Stack
+                                            direction="row"
+                                            justifyContent="space-between"
+                                            width="100%"
+                                        >
                                             <Stack direction="row" spacing={1}>
-                                                <CustomImageContainer
+                                                {/* <CustomImageContainer
                                                     src={cuisine_image.src}
                                                     width="26px"
                                                     height="26px"
-                                                />
+                                                /> */}
                                                 <Typography
-                                                    fontSize={{ xs: "16px", md: "20px" }}
-                                                    fontWeight={{ xs: "500", md: "700" }}
+                                                    fontSize={{
+                                                        xs: '16px',
+                                                        md: '20px',
+                                                    }}
+                                                    fontWeight={{
+                                                        xs: '500',
+                                                        md: '700',
+                                                    }}
                                                     color={
-                                                        theme.palette.neutral[1000]
+                                                        theme.palette
+                                                            .neutral[1000]
                                                     }
                                                 >
                                                     {t('Cuisines')}
                                                 </Typography>
                                             </Stack>
 
-
-                                            <CustomViewAll onClick={() => router.push('/cuisines')} sx={{ marginInlineEnd: "10px" }}>{t("Explore More")}</CustomViewAll>
+                                            <CustomViewAll
+                                                onClick={() =>
+                                                    router.push('/cuisines')
+                                                }
+                                                sx={{ marginInlineEnd: '10px' }}
+                                            >
+                                                {t('Explore More')}
+                                            </CustomViewAll>
                                         </Stack>
                                     </CustomStackFullWidth>
                                 </Grid>
@@ -162,7 +181,6 @@ const Cuisines = () => {
                                     onMouseEnter={() => setHoverOn(true)}
                                     onMouseLeave={() => setHoverOn(false)}
                                 >
-
                                     {cuisines && cuisines?.length > 0 && (
                                         <Grid item xs={12} md={12}>
                                             <SliderCustom>

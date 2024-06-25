@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
-import {
-    WrapperForSideDrawerFilter,
-} from "@/gurbage/admin/components/filter/SideDrawerFilter.style"
+import { WrapperForSideDrawerFilter } from '@/gurbage/admin/components/filter/SideDrawerFilter.style'
 import Toolbar from '@mui/material/Toolbar'
 import { Stack } from '@mui/material'
 import Typography from '@mui/material/Typography'
@@ -10,16 +8,9 @@ import 'simplebar-react/dist/simplebar.min.css'
 import { useTranslation } from 'react-i18next'
 import CustomGroupCheckbox from '../custom-group-checkboxs/CustomGroupCheckbox'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-    setFilterbyByDispatch,
+import { setFilterbyByDispatch } from '@/redux/slices/searchFilter'
 
-} from "@/redux/slices/searchFilter"
-
-
-const FilterCard = ({
-    stateData,
-    setStateData,
-}) => {
+const FilterCard = ({ stateData, setStateData }) => {
     const { t } = useTranslation()
     const { filterData } = useSelector((state) => state.searchFilterStore)
     const [storeData, setStoreData] = useState({ ...filterData })
@@ -29,7 +20,6 @@ const FilterCard = ({
     const handleFilterBy = () => {
         const activeFilters = stateData.filter((item) => item.isActive === true)
         dispatch(setFilterbyByDispatch(activeFilters))
-
     }
     useEffect(() => {
         if (isFilterCall) {
@@ -53,7 +43,6 @@ const FilterCard = ({
                             />
                         </Stack>
                     </Stack>
-
                 </Stack>
             </WrapperForSideDrawerFilter>
         </Box>

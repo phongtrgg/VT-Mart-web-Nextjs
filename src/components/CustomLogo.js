@@ -15,13 +15,14 @@ const CustomLogo = ({ logoImg, atlText, height, width }) => {
         //hostname = window.location.hostnam
     }
     const handleClick = () => {
-        const shouldRedirectToHome = zoneid && currentLocation?.lat && currentLocation?.lng;
-        const newPath = shouldRedirectToHome ? '/home' : '/';
+        const shouldRedirectToHome =
+            zoneid && currentLocation?.lat && currentLocation?.lng
+        const newPath = shouldRedirectToHome ? '/home' : '/'
 
         router.push(newPath, undefined, { shallow: true }).then(() => {
-            window.scrollTo(0, 0);
-        });
-    };
+            window.scrollTo(0, 0)
+        })
+    }
     return (
         <Logo height={height} width={width} onClick={handleClick}>
             <img src={logoImg} alt={atlText} />

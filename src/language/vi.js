@@ -2,12 +2,14 @@ export const vietnam = {
     english: 'Tiếng Anh',
     vietnamese: 'Tiếng Việt',
     only: 'Chỉ một',
+    'No Restaurants found': 'không tìm thấy cửa hàng',
+    'No category found': 'Không tìm thấy danh mục',
     'items available': 'Các mặt hàng có sẵn',
     'Welcome to React': 'Chào mừng đến với React và react-i18next',
     'Dont have a cutlery? Restaurant will provide you.':
         'Không có dao nĩa? Cửa hàng sẽ cung cấp cho bạn.',
     'Minimum Order': 'Đơn hàng tối thiểu',
-    'Choose Food from your Favourite Restaurants':
+    'Choose Food from  your Favourite Restaurants':
         'Chọn sản phẩm từ cửa hàng yêu thích của bạn',
     'Sharing your accurate location enhances precision in search results and delivery estimates, ensures effortless order delivery.':
         'Chia sẻ vị trí chính xác của bạn sẽ cải thiện độ chính xác trong kết quả tìm kiếm và ước tính giao hàng, đảm bảo việc giao hàng dễ dàng.',
@@ -819,7 +821,7 @@ export const vietnam = {
     'No Cuisine Restaurant Found':
         'Không tìm thấy cửa hàng nào phục vụ sản phẩm này',
     'Cuisine Restaurant': 'Cửa hàng phục vụ sản phẩm',
-    Cuisines: 'Thực đơn',
+    Cuisines: 'Khu vực',
     RecommendProduct: 'Sản phẩm được đề xuất',
     'Cancel Reason': 'Lý do hủy',
     'You can not Order more then  on COD order':

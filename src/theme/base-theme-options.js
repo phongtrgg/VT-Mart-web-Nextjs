@@ -119,8 +119,6 @@ export const baseThemeOptions = {
                     minHeight: '100%',
                     width: '100%',
                     textTransform: 'capitalize',
-
-
                 },
                 '#__next': {
                     display: 'flex',
@@ -196,7 +194,7 @@ export const baseThemeOptions = {
             styleOverrides: {
                 root: {
                     '&:hover': {
-                        backgroundColor: 'rgba(239, 120, 34, 0.05)',
+                        backgroundColor: '#6E726E',
                     },
                 },
             },

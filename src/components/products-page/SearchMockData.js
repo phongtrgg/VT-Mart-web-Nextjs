@@ -13,18 +13,18 @@ export const searchMockData = [
     //     value: 'cuisine',
     //     isActive: false,
     // },
-    {
-        id: 0,
-        name: t('Veg'),
-        value: 'veg',
-        isActive: false,
-    },
-    {
-        id: 2,
-        name: t('Non-Veg'),
-        value: 'nonVeg',
-        isActive: false,
-    },
+    // {
+    //     id: 0,
+    //     name: t('Veg'),
+    //     value: 'veg',
+    //     isActive: false,
+    // },
+    // {
+    //     id: 2,
+    //     name: t('Non-Veg'),
+    //     value: 'nonVeg',
+    //     isActive: false,
+    // },
     {
         id: 3,
         name: t('Ratings 3 +'),
@@ -36,7 +36,8 @@ export const searchMockData = [
         name: t('Ratings 4 +'),
         value: 'rating',
         isActive: false,
-    },  {
+    },
+    {
         id: 5,
         name: t('Ratings 5'),
         value: 'rating5',
