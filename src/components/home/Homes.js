@@ -123,23 +123,27 @@ const Homes = ({ configData }) => {
         enabled: false,
         onError: onSingleErrorResponse,
     })
-    useEffect(async () => {
-        if (
-            banners?.banners?.length === 0 &&
-            banners?.campaigns?.length === 0
-        ) {
-            await refetchBannerData()
+    useEffect(() => {
+        const fetchData = async () => {
+            if (
+                banners?.banners?.length === 0 &&
+                banners?.campaigns?.length === 0
+            ) {
+                await refetchBannerData()
+            }
+
+            if (campaignFoods?.length === 0) {
+                await refetchCampaignData()
+            }
+            if (bestReviewedFoods?.length === 0) {
+                await refetchMostReviewed()
+            }
+            if (popularFood?.length === 0) {
+                await refetchNearByPopularRestaurantData()
+            }
         }
 
-        if (campaignFoods?.length === 0) {
-            await refetchCampaignData()
-        }
-        if (bestReviewedFoods?.length === 0) {
-            await refetchMostReviewed()
-        }
-        if (popularFood?.length === 0) {
-            await refetchNearByPopularRestaurantData()
-        }
+        fetchData()
     }, [])
     const iSSearchValue = false
     useEffect(() => {
@@ -281,17 +285,26 @@ const Homes = ({ configData }) => {
                             />
                         </Box>
                         <Box mt={2}>
-                            <Typography variant="h5" mb={1} color={theme.palette.neutral[1000]}>
+                            <Typography
+                                variant="h5"
+                                mb={1}
+                                color={theme.palette.neutral[1000]}
+                            >
                                 {t('Welcome to ' + configData?.business_name)}
                             </Typography>
-                            <Typography variant="body2" lineHeight={'1.5'} color={theme.palette.neutral[1000]}>
+                            <Typography
+                                variant="body2"
+                                lineHeight={'1.5'}
+                                color={theme.palette.neutral[1000]}
+                            >
                                 {userData?.is_valid_for_discount
                                     ? t(
                                           `Get ready for a special welcome gift, enjoy a special discount on your first order within `
                                       ) +
                                       userData?.validity +
                                       '.'
-                                    : ''}{'  '}
+                                    : ''}
+                                {'  '}
                                 {t(
                                     `  Start exploring the best services around you.`
                                 )}

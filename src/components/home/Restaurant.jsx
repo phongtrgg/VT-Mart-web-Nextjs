@@ -122,12 +122,20 @@ const Restaurant = () => {
         }
     }, [inView])
 
-    useEffect(async () => {
-        if (forFilter) {
-            setOffSet(1)
-            //fetchPage(2)
-            await refetch()
+    useEffect(() => {
+        const fetchData = async () => {
+            if (forFilter) {
+                setOffSet(1)
+                try {
+                    await refetch()
+                } catch (error) {
+                    // Handle refetch error
+                    console.error('Error while refetching:', error)
+                }
+            }
         }
+
+        fetchData()
     }, [forFilter, filterByData, filterType])
     let mode = undefined
     if (typeof window !== 'undefined') {
