@@ -115,7 +115,7 @@ const NewRestaurant = () => {
                             <Typography
                                 sx={{
                                     background:
-                                        'linear-gradient(90deg, #414141 0.02%, #FF8B03 40%, #414141 80%)',
+                                        'linear-gradient(90deg, #414141 0.02%, #79B669 40%, #414141 80%)',
                                     backgroundClip: 'text',
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
@@ -130,7 +130,7 @@ const NewRestaurant = () => {
                                 fontSize={{ xs: '16px', md: '20px' }}
                                 fontWeight={{ xs: '500', md: '700' }}
                             >
-                                {t('New on Stackfood')}
+                                {t('New on VT-Mart')}
                             </Typography>
                         </Stack>
                         <CustomViewAll

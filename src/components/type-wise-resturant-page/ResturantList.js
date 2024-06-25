@@ -15,13 +15,13 @@ const ResturantList = ({ restaurantType }) => {
     const { global } = useSelector((state) => state.globalSettings)
     const restaurantCoverUrl = global?.base_urls?.restaurant_cover_photo_url
     const [type, setType] = useState('all')
-    const orangeColor = '#EF7822'
-    const orangeColor2 = '#ff903f'
+    const greenColor = '#1F8505'
+    const greenColor2 = '#79B669'
     const PrimaryButton = styled(Button)(({ theme }) => ({
         color: '#fff',
-        backgroundColor: orangeColor,
+        backgroundColor: greenColor,
         '&:hover': {
-            backgroundColor: orangeColor2,
+            backgroundColor: greenColor2,
         },
     }))
     const [open, setOpen] = React.useState(false)

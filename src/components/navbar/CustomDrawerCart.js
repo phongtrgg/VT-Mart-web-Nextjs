@@ -34,7 +34,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { RestaurantsApi } from '../../hooks/react-query/config/restaurantApi'
-import CustomImageContainer from "../CustomImageContainer";
+import CustomImageContainer from '../CustomImageContainer'
 
 const CustomDrawerCart = () => {
     const router = useRouter()
@@ -47,7 +47,6 @@ const CustomDrawerCart = () => {
     const handleOpenAuthModal = () => setOpen(true)
     const handleCloseAuthModal = () => setOpen(false)
 
-
     const {
         isLoading,
         data: restaurantData,
@@ -57,7 +56,6 @@ const CustomDrawerCart = () => {
     } = useQuery([`restaurant-details`], () =>
         RestaurantsApi.restaurantDetails(cartList[0].restaurant_id)
     )
-
 
     const DrawerHeader = styled('div')(({ theme }) => ({
         marginTop: '60px',
@@ -116,7 +114,7 @@ const CustomDrawerCart = () => {
                                     >
                                         <span
                                             style={{
-                                                color: '#EF7822',
+                                                color: '#79B669',
                                                 fontWeight: 'bold',
                                             }}
                                         >
@@ -158,9 +156,11 @@ const CustomDrawerCart = () => {
                                     {cartList?.map((item) => (
                                         <React.Fragment key={item.id}>
                                             <Grid item md={4} xs={4}>
-                                                <CustomImageContainer  height="90px"
-                                                                       width="90px"
-                                                                       src={`${item.image}`}/>
+                                                <CustomImageContainer
+                                                    height="90px"
+                                                    width="90px"
+                                                    src={`${item.image}`}
+                                                />
                                                 {/*<img*/}
                                                 {/*    height="90px"*/}
                                                 {/*    width="90px"*/}

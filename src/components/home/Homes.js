@@ -247,7 +247,8 @@ const Homes = ({ configData }) => {
                                 }
                             />
                             <NewRestaurant />
-                            {global && <Cuisines />}
+                            {/* tạm ẩn */}
+                            {/* {global && <Cuisines />} */}
 
                             {global?.banner_data?.promotional_banner_image && (
                                 <PromotionalBanner global={global} />

@@ -14,12 +14,12 @@ import { styled, useTheme } from '@mui/material/styles'
 import {
     CustomColouredTypography,
     CustomStackFullWidth,
-} from "@/styled-components/CustomStyles.style"
+} from '@/styled-components/CustomStyles.style'
 import { CustomTypography } from '../custom-tables/Tables.style'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
-import { ProductsApi } from "@/hooks/react-query/config/productsApi"
+import { ProductsApi } from '@/hooks/react-query/config/productsApi'
 import { useDispatch, useSelector } from 'react-redux'
 import Skeleton from '@mui/material/Skeleton'
 import SearchIcon from '@mui/icons-material/Search'
@@ -28,24 +28,24 @@ import SuggestedCuisines from './SuggestedCuisines'
 import { setHandleHomePage } from '../../redux/slices/global'
 import { Scrollbar } from '../Scrollbar'
 import SearchSuggestionsShimmer from './SearchSuggestionsShimmer'
-import { useGetSuggestSearchResult } from "@/hooks/react-query/search/useGetSuggestSearchResult"
-import { setSuggestedKeywords } from "@/redux/slices/storedData"
+import { useGetSuggestSearchResult } from '@/hooks/react-query/search/useGetSuggestSearchResult'
+import { setSuggestedKeywords } from '@/redux/slices/storedData'
 const CustomPaper = styled(Paper)(({ theme, display }) => ({
     position: 'absolute',
-    top: "64px",
-    maxWidth:"450px",
+    top: '64px',
+    maxWidth: '450px',
     width: '100%',
     padding: '1rem',
     display: display ? display : 'inherit',
     zIndex: 999,
-    left: "unset",
+    left: 'unset',
     borderTopLeftRadius: '0px',
     borderTopRightRadius: '0px',
     [theme.breakpoints.down('md')]: {
         zIndex: 999,
-        maxWidth:"350px",
+        maxWidth: '350px',
         width: '100%',
-        top: "54px",
+        top: '54px',
     },
 }))
 const SearchSuggestionsBottom = (props) => {
@@ -56,7 +56,7 @@ const SearchSuggestionsBottom = (props) => {
         routeHandler,
         handleFocus,
         inputValue,
-        searchRef
+        searchRef,
     } = props
     const dispatch = useDispatch()
     const theme = useTheme()
@@ -192,7 +192,7 @@ const SearchSuggestionsBottom = (props) => {
                 onMouseEnter={() => handleFocus()}
                 onMouseLeave={() => setOnSearchDiv(false)}
                 //display={token ? 'inherit' : list.length > 0 ? 'inherit' : 'none'}
-                sx={{ maxHeight: '400px',zIndex:99999 }}
+                sx={{ maxHeight: '400px', zIndex: 99999 }}
             >
                 <CustomStackFullWidth spacing={3}>
                     <Scrollbar style={{ maxHeight: '100%' }}>
@@ -292,7 +292,7 @@ const SearchSuggestionsBottom = (props) => {
                                             <CustomColouredTypography
                                                 sx={{ fontSize: '14px' }}
                                             >
-                                                {t('Foods')}
+                                                {t('Product')}
                                             </CustomColouredTypography>
                                             {data?.foods?.map((item, index) => {
                                                 return (

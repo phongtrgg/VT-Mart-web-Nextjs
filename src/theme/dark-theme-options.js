@@ -116,9 +116,9 @@ const pending = {
 }
 const whiteContainer = {
     main: '#F9FAFC',
-    light: '#EF7822',
-    dark: '#ff903f',
-    contrastText: '#EF7822',
+    light: '#1F8505',
+    dark: '#BCDBB4',
+    contrastText: '#1F8505',
 }
 const customColor = {
     one: '#FF5E00',

@@ -75,7 +75,7 @@ export default function FoodOrRestaurant({
                             cursor: 'pointer',
                         }}
                     >
-                        {t('Foods')}
+                        {t('Product')}
                         <Typography
                             sx={{
                                 borderBottom: isProduct

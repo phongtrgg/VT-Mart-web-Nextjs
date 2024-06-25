@@ -125,7 +125,7 @@ const FilterWithSideDrawer = ({
                             {' '}
                             <Typography component="span">{count} </Typography>
                             {foodOrRestaurant === 'products'
-                                ? t('foods')
+                                ? t('product')
                                 : t('Restaurants')}{' '}
                         </Typography>
                     </Stack>

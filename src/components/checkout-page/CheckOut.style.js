@@ -61,7 +61,7 @@ export const SaveAddressBox = styled(Button)(() => ({
 }))
 
 export const AddNewButton = styled(Button)(() => ({
-    color: '#EF7822',
+    color: '#79B669',
     fontSize: '14px',
     fontWeight: '700',
     background: 'rgba(239, 120, 34, 0.1)',
