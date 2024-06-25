@@ -123,23 +123,27 @@ const Homes = ({ configData }) => {
         enabled: false,
         onError: onSingleErrorResponse,
     })
-    useEffect(async () => {
-        if (
-            banners?.banners?.length === 0 &&
-            banners?.campaigns?.length === 0
-        ) {
-            await refetchBannerData()
+    useEffect(() => {
+        const fetchData = async () => {
+            if (
+                banners?.banners?.length === 0 &&
+                banners?.campaigns?.length === 0
+            ) {
+                await refetchBannerData()
+            }
+
+            if (campaignFoods?.length === 0) {
+                await refetchCampaignData()
+            }
+            if (bestReviewedFoods?.length === 0) {
+                await refetchMostReviewed()
+            }
+            if (popularFood?.length === 0) {
+                await refetchNearByPopularRestaurantData()
+            }
         }
 
-        if (campaignFoods?.length === 0) {
-            await refetchCampaignData()
-        }
-        if (bestReviewedFoods?.length === 0) {
-            await refetchMostReviewed()
-        }
-        if (popularFood?.length === 0) {
-            await refetchNearByPopularRestaurantData()
-        }
+        fetchData()
     }, [])
     const iSSearchValue = false
     useEffect(() => {

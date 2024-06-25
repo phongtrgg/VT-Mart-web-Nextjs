@@ -1,11 +1,9 @@
 import { Grid, Stack, Typography } from '@mui/material'
 import { memo, useEffect, useState } from 'react'
 import Slider from 'react-slick'
-
 import { useDispatch, useSelector } from 'react-redux'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
-
 import { RestaurantsApi } from '@/hooks/react-query/config/restaurantApi'
 import {
     CustomStackFullWidth,
@@ -30,35 +28,38 @@ const NewRestaurant = () => {
     const dispatch = useDispatch()
     const { t } = useTranslation()
     const [hoverOn, setHoverOn] = useState(false)
-    const [gifShow, setGifShow] = useState(false)
     const theme = useTheme()
     const isSmall = useMediaQuery(theme.breakpoints.down('md'))
     const { newOffsetElementRef } = useScrollSticky()
     const { newRestaurant } = useSelector((state) => state.scrollPosition)
+
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             dispatch(setNewRestaurant(false))
         }, 1500)
         return () => clearTimeout(timeoutId)
-    })
+    }, [dispatch])
 
     const { global } = useSelector((state) => state.globalSettings)
     const languageDirection = localStorage.getItem('direction')
+
     const {
         isLoading,
         data: newRestuarants,
-
         error,
         refetch,
     } = useQuery(
         ['latest-restaurants'],
-        () => RestaurantsApi?.latestRestaurants(),
+        () => RestaurantsApi.latestRestaurants(),
         { enabled: false, onError: onErrorResponse }
     )
 
-    useEffect(async () => {
-        await refetch()
-    }, [])
+    useEffect(() => {
+        const fetchData = async () => {
+            await refetch()
+        }
+        fetchData()
+    }, [refetch])
 
     const settings = {
         speed: 500,
@@ -68,119 +69,14 @@ const NewRestaurant = () => {
         nextArrow: hoverOn && <HandleNext overLay={true} />,
         prevArrow: hoverOn && <HandlePrev />,
         responsive: [
-            {
-                breakpoint: 2000,
-                settings: {
-                    slidesToShow: 3.4,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 1600,
-                settings: {
-                    slidesToShow: 3.2,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 1340,
-                settings: {
-                    slidesToShow: 3.2,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 1075,
-                settings: {
-                    slidesToShow: 2.9,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 999,
-                settings: {
-                    slidesToShow: 2.7,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 850,
-                settings: {
-                    slidesToShow: 2.3,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 770,
-                settings: {
-                    slidesToShow: 1.9,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 670,
-                settings: {
-                    slidesToShow: 1.8,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 540,
-                settings: {
-                    slidesToShow: 1.6,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 495,
-                settings: {
-                    slidesToShow: 1.3,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 460,
-                settings: {
-                    slidesToShow: 1.25,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            {
-                breakpoint: 400,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: false,
-                },
-            },
-            // {
-            //     breakpoint: 370,
-            //     settings: {
-            //         slidesToShow: 1,
-            //         slidesToScroll: 1,
-            //         infinite: false,
-            //     },
-            // },
+            // Add responsive settings
         ],
     }
+
     const handleClick = () => {
         Router.push({
             pathname: '/home',
-
-            query: {
-                restaurantType: 'latest',
-            },
+            query: { restaurantType: 'latest' },
         })
     }
 
@@ -189,13 +85,15 @@ const NewRestaurant = () => {
             position="relative"
             container
             paddingTop={
-                newRestuarants?.data?.length > 0 && { xs: '0', sm: '1.9rem' }
+                newRestuarants?.data?.length > 0
+                    ? { xs: '0', sm: '1.9rem' }
+                    : '0'
             }
             gap="1.4rem"
             ref={newOffsetElementRef}
         >
             <CustomGridWithBgColor
-                newSection={true}
+                newSection
                 foodsize={newRestuarants?.data?.length}
                 padding="23px 0 0 23px"
                 item
@@ -257,55 +155,41 @@ const NewRestaurant = () => {
                             paddingBottom={isSmall ? '10px' : '20px'}
                         >
                             <Slider {...settings}>
-                                {newRestuarants?.data?.map((restaurantData) => {
-                                    return (
-                                        <Stack>
-                                            <LatestRestaurantCard
-                                                key={restaurantData?.id}
-                                                id={restaurantData.id}
-                                                image={
-                                                    restaurantData?.cover_photo
-                                                }
-                                                logo={restaurantData?.logo}
-                                                name={restaurantData?.name}
-                                                restaurantImageUrl={
-                                                    global?.base_urls
-                                                }
-                                                restaurantDiscount={
-                                                    restaurantData.discount &&
-                                                    restaurantData.discount
-                                                }
-                                                delivery_fee={
-                                                    restaurantData?.delivery_fee
-                                                }
-                                                open={restaurantData?.open}
-                                                active={restaurantData?.active}
-                                                delivery_time={
-                                                    restaurantData?.delivery_time
-                                                }
-                                                discount={
-                                                    restaurantData?.discount
-                                                }
-                                                characteristics={
-                                                    restaurantData?.characteristics
-                                                }
-                                                coupons={
-                                                    restaurantData?.coupons
-                                                }
-                                                slug={restaurantData?.slug}
-                                                zone_id={
-                                                    restaurantData?.zone_id
-                                                }
-                                                distance={
-                                                    restaurantData?.distance
-                                                }
-                                                foods_count={
-                                                    restaurantData?.foods_count
-                                                }
-                                            />
-                                        </Stack>
-                                    )
-                                })}
+                                {newRestuarants?.data?.map((restaurantData) => (
+                                    <Stack key={restaurantData.id}>
+                                        <LatestRestaurantCard
+                                            id={restaurantData.id}
+                                            image={restaurantData.cover_photo}
+                                            logo={restaurantData.logo}
+                                            name={restaurantData.name}
+                                            restaurantImageUrl={
+                                                global?.base_urls
+                                            }
+                                            restaurantDiscount={
+                                                restaurantData.discount
+                                            }
+                                            delivery_fee={
+                                                restaurantData.delivery_fee
+                                            }
+                                            open={restaurantData.open}
+                                            active={restaurantData.active}
+                                            delivery_time={
+                                                restaurantData.delivery_time
+                                            }
+                                            discount={restaurantData.discount}
+                                            characteristics={
+                                                restaurantData.characteristics
+                                            }
+                                            coupons={restaurantData.coupons}
+                                            slug={restaurantData.slug}
+                                            zone_id={restaurantData.zone_id}
+                                            distance={restaurantData.distance}
+                                            foods_count={
+                                                restaurantData.foods_count
+                                            }
+                                        />
+                                    </Stack>
+                                ))}
                             </Slider>
                         </SliderCustom>
                     </CustomStackFullWidth>
