@@ -197,7 +197,7 @@ const NavResturant = ({ zoneid }) => {
                                                                     alignItems="center"
                                                                 >
                                                                     <CustomImageContainer
-                                                                        src={`${restuarantImageUrl}/${restaurant.logo}`}
+                                                                        src={`${restaurant.logo}`}
                                                                         width="40px"
                                                                         height="40px"
                                                                         borderRadius=".4rem"
@@ -265,7 +265,7 @@ const NavResturant = ({ zoneid }) => {
                                                                     alignItems="center"
                                                                 >
                                                                     <CustomImageContainer
-                                                                        src={`${restuarantImageUrl}/${restaurant.logo}`}
+                                                                        src={`${restaurant.logo}`}
                                                                         width="40px"
                                                                         height="40px"
                                                                         borderRadius=".4rem"

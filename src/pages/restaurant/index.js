@@ -2,27 +2,27 @@ import React from 'react'
 import Restaurant from '../../components/restaurant-page/Restaurant'
 import Meta from '../../components/Meta'
 import PushNotificationLayout from '../../components/PushNotificationLayout'
-import { landingPageApi } from "@/components/landingpage/Api"
+import { landingPageApi } from '@/components/landingpage/Api'
 import { useTranslation } from 'react-i18next'
 
-import HomeGuard from "../../components/home-guard/HomeGuard";
+import HomeGuard from '../../components/home-guard/HomeGuard'
 
 const index = ({ configData, landingPageData, pathName }) => {
     const { t } = useTranslation()
     return (
         <div className="div">
-        <HomeGuard>
-            <Meta
-                title={`${t('Restaurants')} ${t('on')} ${
-                    configData?.business_name
-                }`}
-                ogImage={`${configData?.base_urls?.react_landing_page_images}/${landingPageData?.banner_section_full?.banner_section_img_full}`}
-                pathName={pathName}
-            />
-            <PushNotificationLayout>
-                <Restaurant />
-            </PushNotificationLayout>
-        </HomeGuard>
+            <HomeGuard>
+                <Meta
+                    title={`${t('Restaurants')} ${t('on')} ${
+                        configData?.business_name
+                    }`}
+                    ogImage={`${configData?.base_urls?.react_landing_page_images}/${landingPageData?.banner_section_full?.banner_section_img_full}`}
+                    pathName={pathName}
+                />
+                <PushNotificationLayout>
+                    <Restaurant />
+                </PushNotificationLayout>
+            </HomeGuard>
         </div>
     )
 }

@@ -404,7 +404,7 @@ const RestaurantLeftDetails = (props) => {
                                     }}
                                 >
                                     <CustomImageContainer
-                                        src={`${global?.base_urls?.restaurant_image_url}/${details?.logo}`}
+                                        src={`${details?.logo}`}
                                         width="100px"
                                         smWidth={
                                             scrollPosition === 0
@@ -594,7 +594,7 @@ const RestaurantLeftDetails = (props) => {
                 }}
             >
                 <CustomImageContainer
-                    src={`${restaurantCoverUrl}/${details.cover_photo}`}
+                    src={`${details.cover_photo}`}
                     height="250px"
                     smHeight={scrollPosition === 0 ? '205px' : '140px'}
                     objectFit="cover"
