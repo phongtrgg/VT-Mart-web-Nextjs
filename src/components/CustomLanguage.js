@@ -17,6 +17,7 @@ import { CustomToaster } from './custom-toaster/CustomToaster'
 import { LefRightBorderBox, TopBarButton } from './navbar/Navbar.style'
 import { languageLists } from './navbar/second-navbar/custom-language/languageLists'
 import { StyledMenu } from './navbar/top-navbar/TopNav.style'
+import { useTranslation } from 'react-i18next'
 const CustomLanguage = ({
     formMobileMenu,
     language,
@@ -25,7 +26,7 @@ const CustomLanguage = ({
 }) => {
     const theme = useTheme()
     const dispatch = useDispatch()
-
+    const { t } = useTranslation()
     const [anchorEl, setAnchorEl] = useState(null)
     const anchorRef = useRef(null)
     const { global } = useSelector((state) => state.globalSettings)
@@ -149,7 +150,7 @@ const CustomLanguage = ({
                                 languageDirection === 'rtl' ? '1rem' : '0px'
                             }
                         >
-                            {lan.languageName}
+                            {t(`${lan?.languageName}`)}
                         </Typography>
                     </MenuItem>
                 ))}

@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux'
 
 export const ImageSource = (imageFor, imageUrl) => {
-    let imageSource = `${imageFor}/${imageUrl}`
+    // let imageSource = `${imageFor}/${imageUrl}`
+    let imageSource = `${imageUrl}`
     return imageSource
     // const { global } = useSelector((state) => state.globalSettings)
     // if (imageFor === 'product') {

@@ -8,6 +8,7 @@ const LogoSide = ({ global, width, businessLogo }) => {
     return (
         <CustomLogo
             atlText="logo"
+
             logoImg={`${businessLogo}`}
             height="1.5rem"
             width={width}

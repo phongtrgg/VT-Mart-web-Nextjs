@@ -174,7 +174,7 @@ const FoodCampaign = ({ data, isLoading }) => {
             },
         ],
     }
-
+    console.log({campaignFoods});
     return (
         <>
             <Grid

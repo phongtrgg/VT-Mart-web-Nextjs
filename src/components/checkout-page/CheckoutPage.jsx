@@ -102,7 +102,7 @@ export const handleValuesFromCartItems = (variationValues) => {
     return value
 }
 export const handleIdsFromCartItems = (variationValues) => {
-
+    console.log({variationValues});
     let value = []
     if (variationValues?.length > 0) {
         variationValues?.forEach((item) => {

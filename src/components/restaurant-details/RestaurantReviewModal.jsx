@@ -53,7 +53,7 @@ const RestaurantReviewModal = ({
             onError: onErrorResponse,
         }
     )
-
+    console.log({restaurantDetails});
     const getStart = () => {
         const ratingCounts = {
             one_star: 0,
@@ -105,6 +105,7 @@ const RestaurantReviewModal = ({
     }, [data])
     const getPercentOfNumber = (percentRate) => {
         const total = restaurantDetails?.ratings.reduce((sum, current) => sum + current, 0);
+        console.log({percentRate});
         return percentRate
             ? ((percentRate / total) * 100).toFixed(1)
             : 0

@@ -42,6 +42,7 @@ export const ChoiceValues = (props) => {
     } = props
     const [radioData, setRadioData] = useState({ isChecked: false })
 
+    console.log({choice});
     const theme=useTheme()
     useEffect(() => {
         radioData?.option &&

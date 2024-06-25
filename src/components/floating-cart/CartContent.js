@@ -37,7 +37,7 @@ const CartContent = ({item,handleProductUpdateModal,productBaseUrl,t}) => {
   let currencySymbol
   let currencySymbolDirection
   let digitAfterDecimalPoint
-
+  console.log({item});
 
   if (global) {
     currencySymbol = global.currency_symbol

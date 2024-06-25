@@ -120,6 +120,7 @@ const SettingPage = () => {
     const activeFlag = selectedCountryFlag(countryCode)
 
     const lanColor = theme.palette.neutral[1000]
+    console.log({settings});
     return (
         <>
             {' '}
