@@ -786,7 +786,7 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                                             <Stack>
                                                                 {product.item_campaign_id ? (
                                                                     <CustomImageContainer
-                                                                        src={`${productBaseUrlCampaign}/${product.food_details.image}`}
+                                                                        src={`${product.food_details.image}`}
                                                                         height="60px"
                                                                         maxWidth="60px"
                                                                         width="100%"
@@ -796,7 +796,7 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                                                     />
                                                                 ) : (
                                                                     <CustomImageContainer
-                                                                        src={`${productBaseUrl}/${product.food_details.image}`}
+                                                                        src={`${product.food_details.image}`}
                                                                         height="60px"
                                                                         maxWidth="60px"
                                                                         width="100%"

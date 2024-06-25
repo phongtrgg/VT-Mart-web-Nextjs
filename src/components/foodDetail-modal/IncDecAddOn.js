@@ -41,7 +41,7 @@ const IncDecAddOn = ({
     const [quantity, setQuantity] = useState(0)
     const { global } = useSelector((state) => state.globalSettings)
     const theme = useTheme()
-
+    console.log({ add_on })
     let currencySymbol
     let currencySymbolDirection
     let digitAfterDecimalPoint

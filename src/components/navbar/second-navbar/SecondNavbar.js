@@ -141,6 +141,7 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
             dispatch(setOfflineWithPartials(false))
         }
     }, [])
+    console.log(`${userData?.image}`)
     const handleAuthBasedOnRoute = () => {
         return (
             <RTL direction={languageDirection}>
@@ -233,7 +234,7 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
                                             : (theme) =>
                                                   theme.palette.neutral[400],
                                     }}
-                                    src={`${customerbaseUrl}/${userData?.image}`}
+                                    src={`${userData?.image}`}
                                 />
                             </Box>
                         </Stack>
@@ -280,7 +281,7 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
         <NoSsr>
             <CustomNavBox isSticky={isSticky}>
                 <CustomContainer>
-                    <Toolbar disablegutters="true">
+                    <Toolbar disableGutters={true}>
                         <CustomStackFullWidth
                             ref={searchBoxRef}
                             direction="row"
