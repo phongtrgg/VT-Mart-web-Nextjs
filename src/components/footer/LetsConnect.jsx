@@ -30,7 +30,8 @@ const LetsConnect = ({ languageDirection, web }) => {
                     Lets Connect !
                 </Typography>
                 <Typography className="subtitle font-signika-negative">
-                    Stay upto date with restaurants and foods around you aljsdhákdhákjdhạkdh
+                    Stay upto date with restaurants and foods around you
+                    aljsdhákdhákjdhạkdh
                 </Typography>
                 <Paper
                     // variant="outlined"
@@ -57,11 +58,13 @@ const LetsConnect = ({ languageDirection, web }) => {
                             color: '#DDE3EA',
                             align: 'center',
                         }}
-                        placeholder={`${t("Your Email Address")}`}
-                        inputProps={{ 'aria-label': `${t('Your Email Address')}` }}
+                        placeholder={`${t('Your Email Address')}`}
+                        inputProps={{
+                            'aria-label': `${t('Your Email Address')}`,
+                        }}
                     />
-                    <StyledButton type="submit" aria-label={`${t("search")}`}>
-                        {`${t("Join")}`}
+                    <StyledButton type="submit" aria-label={`${t('search')}`}>
+                        {`${t('Join')}`}
                     </StyledButton>
                 </Paper>
             </Stack>

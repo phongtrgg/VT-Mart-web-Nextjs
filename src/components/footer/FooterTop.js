@@ -28,8 +28,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { Stack } from '@mui/system'
 import { RTL } from '../RTL/RTL'
 import { CustomToaster } from '../custom-toaster/CustomToaster'
-import FooterBG from '../../../public/static/footer/footerBG.png'
-
+// import FooterBG from '../../../public/static/footer/footerBG.png'
+import FooterBG from '../../../public/static/footer/ftbg.png'
 const FooterTop = ({ landingPageData }) => {
     const theme = useTheme()
     const isXSmall = useMediaQuery(theme.breakpoints.down('sm'))
@@ -68,7 +68,7 @@ const FooterTop = ({ landingPageData }) => {
             alignItems="center"
             minHeight="144px"
             sx={{
-                backgroundImage: `url(${FooterBG.src})`,
+                // backgroundImage: `url(${FooterBG.src})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -79,8 +79,8 @@ const FooterTop = ({ landingPageData }) => {
                 sx={{
                     backgroundColor: (theme) =>
                         theme.palette.mode === 'dark'
-                            ? alpha(theme.palette.secondary.main, 0.7)
-                            : alpha(theme.palette.primary.light, 0.3),
+                            ? theme.palette.primary.hover
+                            : theme.palette.primary.main,
                 }}
             >
                 <CustomContainer>
@@ -156,12 +156,16 @@ const FooterTop = ({ landingPageData }) => {
                                                 onClick={handleSubmit}
                                                 sx={{
                                                     // background: `radial-gradient(50% 50% at 50% 50%, ${theme.palette.customColor.eight} 0%, ${theme.palette.customColor.nine} 100%)`,
-                                                    background: `green`,
+                                                    background:
+                                                        theme.palette.primary
+                                                            .main,
                                                     borderRadius: '5px',
                                                     minWidth: '45px',
                                                     padding: '5px 10px',
                                                     '&:hover': {
-                                                        background: '#246E10',
+                                                        background:
+                                                            theme.palette
+                                                                .primary.hover,
                                                     },
                                                 }}
                                             >

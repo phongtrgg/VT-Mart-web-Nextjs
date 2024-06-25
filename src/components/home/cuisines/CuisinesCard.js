@@ -28,14 +28,14 @@ const CuisinesCard = ({ item }) => {
                             //             theme.transitions.duration.standard,
                             //     }
                             // )}`,
-                            transition: "transform 0.5s ease-in-out",
+                            transition: 'transform 0.5s ease-in-out',
                             '&:hover': {
                                 transform: 'scale(1.1)',
                             },
                         }}
                     >
                         <CustomImageContainer
-                            src={`${global?.base_urls?.cuisine_image_url}/${item?.image}`}
+                            src={`${item?.image}`}
                             height="100px"
                             maxWidth="100px"
                             width="100%"
@@ -49,7 +49,7 @@ const CuisinesCard = ({ item }) => {
                     </Stack>{' '}
                     <Typography
                         textAlign="center"
-                        fontSize={{ xs: '13px', sm: '14px', md: "14px" }}
+                        fontSize={{ xs: '13px', sm: '14px', md: '14px' }}
                         fontWeight="400"
                         sx={{
                             color: (theme) => theme.palette.neutral[1000],
