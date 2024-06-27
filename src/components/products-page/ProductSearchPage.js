@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
-import { ProductsApi } from "@/hooks/react-query/config/productsApi"
+import { ProductsApi } from '@/hooks/react-query/config/productsApi'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
-import { CustomStackFullWidth } from "@/styled-components/CustomStyles.style"
+import { CustomStackFullWidth } from '@/styled-components/CustomStyles.style'
 import SearchFilterWithResults from './SearchFilterWithResults'
 import { getFilterChoices } from './getFilterChoices'
 import Meta from '../Meta'
 import { onErrorResponse } from '../ErrorResponse'
-import { RestaurantsApi } from "@/hooks/react-query/config/restaurantApi"
-import { setFilterbyByDispatch, setFoodOrRestaurant } from "@/redux/slices/searchFilter";
-import { setSearchTagData } from "@/redux/slices/searchTagSlice";
+import { RestaurantsApi } from '@/hooks/react-query/config/restaurantApi'
+import {
+    setFilterbyByDispatch,
+    setFoodOrRestaurant,
+} from '@/redux/slices/searchFilter'
+import { setSearchTagData } from '@/redux/slices/searchTagSlice'
 
 const ProductSearchPage = ({
     product_type,
@@ -18,23 +21,27 @@ const ProductSearchPage = ({
     query,
     page,
     restaurantType,
-                               tags
+    tags,
 }) => {
     const dispatch = useDispatch()
     const { global } = useSelector((state) => state.globalSettings)
     const router = useRouter()
     const [type, setType] = useState('all')
-    const {searchTagData,selectedValue,selectedName}=useSelector((state) => state.searchTags)
+    const { searchTagData, selectedValue, selectedName } = useSelector(
+        (state) => state.searchTags
+    )
     // const pageLimitFromAdmin = global.
     const [page_limit, setPageLimit] = useState(15)
     const [offset, setOffset] = useState(1)
     const [searchValue, setSearchValue] = useState('')
     //const [foodOrRestaurant, setFoodOrRestaurant] = useState('products')
-    const { filterData,foodOrRestaurant } = useSelector((state) => state.searchFilterStore)
+    const { filterData, foodOrRestaurant } = useSelector(
+        (state) => state.searchFilterStore
+    )
     const [checkfilter, setCheckfilter] = useState(false)
     const [pageData, setPageData] = useState({})
     const [searchOrPage, setSearchOrPage] = useState({})
-    const [totalData,setTotalData] = useState(null)
+    const [totalData, setTotalData] = useState(null)
     const activeFilters = searchTagData.filter((item) => item.isActive === true)
     const apiKey =
         foodOrRestaurant === 'products'
@@ -80,7 +87,7 @@ const ProductSearchPage = ({
                 filterData
             ),
         {
-            retry:1,
+            retry: 1,
             enabled: false,
             onSuccess: handleAPiCallOnSuccess,
             onError: onErrorResponse,
@@ -117,47 +124,48 @@ const ProductSearchPage = ({
         if (restaurantType !== undefined) {
             restaurantRefetch()
         }
-    }, [restaurantType,offset])
+    }, [restaurantType, offset])
 
     useEffect(() => {
         if (page !== undefined) {
             popularRefetch()
         }
-    }, [page,offset])
-
+    }, [page, offset])
 
     useEffect(() => {
         if (query || page || restaurantType) {
             setSearchValue(query)
         } else {
-            if(tags) {
+            if (tags) {
                 setSearchValue(null)
-
-            }else{
+            } else {
                 router.push('/home')
             }
         }
-    }, [query,tags])
-
-
+    }, [query, tags])
 
     useEffect(() => {
-        if(activeFilters?.length===0 && !query && !page && !restaurantType && !searchValue){
+        if (
+            activeFilters?.length === 0 &&
+            !query &&
+            !page &&
+            !restaurantType &&
+            !searchValue
+        ) {
             router.push('/home')
         }
-    }, [searchTagData]);
+    }, [searchTagData])
     useEffect(async () => {
-        if(searchValue){
+        if (searchValue) {
             await refetch()
-        }else if(tags && page){
+        } else if (tags && page) {
             await refetch()
-        }else if(tags){
-            if(activeFilters?.length>0){
+        } else if (tags) {
+            if (activeFilters?.length > 0) {
                 await refetch()
             }
         }
-
-    }, [searchValue,filterData,tags,offset])
+    }, [searchValue, filterData, tags, offset])
 
     useEffect(() => {
         setOffset(1)
@@ -166,9 +174,9 @@ const ProductSearchPage = ({
         }
     }, [foodOrRestaurant])
 
-    if (isError) {
-        return <h1>{error.messages}</h1>
-    }
+    // if (isError) {
+    //     return <h1>{error.messages}</h1>
+    // }
     //const searchOrPage = All ? popularData : data
     useEffect(() => {
         handleFilteredData()
@@ -206,17 +214,19 @@ const ProductSearchPage = ({
     }
 
     useEffect(() => {
-        const temPage=page==="most-reviewed"?"rating":page
-        const temRestaurantType=restaurantType==="latest"?"new_arrivals":restaurantType
+        const temPage = page === 'most-reviewed' ? 'rating' : page
+        const temRestaurantType =
+            restaurantType === 'latest' ? 'new_arrivals' : restaurantType
         const newArr = searchTagData.map((item) =>
-            item.value === (temPage ||temRestaurantType) ? { ...item, isActive: true } : item
-        );
+            item.value === (temPage || temRestaurantType)
+                ? { ...item, isActive: true }
+                : item
+        )
         dispatch(setSearchTagData(newArr))
-    }, [page,restaurantType]);
+    }, [page, restaurantType])
     useEffect(() => {
         setOffset(1)
-    }, [searchTagData,selectedName,searchValue]);
-
+    }, [searchTagData, selectedName, searchValue])
     return (
         <>
             <Meta
@@ -225,13 +235,18 @@ const ProductSearchPage = ({
                 }`}
             />
             <CustomStackFullWidth mb="5rem" sx={{ minHeight: '70vh' }}>
+                {isError && <h1>{error.messages}</h1>}
                 {pageData && (
                     <SearchFilterWithResults
                         filterData={filterData}
                         searchValue={searchValue}
                         foodOrRestaurant={foodOrRestaurant}
                         setFoodOrRestaurant={setFoodOrRestaurant}
-                        isLoading={isLoading || restaurantIsLoading || popularFoodisLoading}
+                        isLoading={
+                            isLoading ||
+                            restaurantIsLoading ||
+                            popularFoodisLoading
+                        }
                         isNetworkCalling={isRefetching}
                         data={pageData}
                         page_limit={page_limit}
@@ -245,7 +260,6 @@ const ProductSearchPage = ({
                         restaurantType={restaurantType}
                         restaurantIsLoading={restaurantIsLoading}
                         totalData={totalData}
-
                     />
                 )}
             </CustomStackFullWidth>

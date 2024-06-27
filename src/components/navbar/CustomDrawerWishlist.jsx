@@ -77,7 +77,7 @@ const CustomDrawerWishlist = (props) => {
                         width={{ xs: '90vw', sm: '490px' }}
                     >
                         <Typography fontSize="16px" fontWeight={700}>
-                            {t('Wishlist')}
+                            {t('wishlist')}
                         </Typography>
                         <FoodOrRestaurant
                             foodOrRestaurant={foodOrRestaurant}

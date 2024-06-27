@@ -100,7 +100,7 @@ const InfoCard = (props) => {
                 //variant="dot"
             >
                 <Avatar
-                    src={`${ChatImageUrl()}/${userImage}`}
+                    src={`${userImage}`}
                     style={{ width: '36px', height: '36px' }}
                 />
             </StyledBadge>

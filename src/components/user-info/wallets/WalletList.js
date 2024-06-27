@@ -534,7 +534,7 @@ const Wallet = ({ page }) => {
                                                                     >
                                                                         {item?.gateway_image && (
                                                                             <img
-                                                                                src={`${base_url}/${item?.gateway_image}`}
+                                                                                src={`${item?.gateway_image}`}
                                                                             />
                                                                         )}
                                                                         <Box

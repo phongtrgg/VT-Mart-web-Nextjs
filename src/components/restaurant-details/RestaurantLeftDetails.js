@@ -420,7 +420,7 @@ const RestaurantLeftDetails = (props) => {
                                 </Stack>
                             ) : (
                                 <CustomImageContainer
-                                    src={`${global?.base_urls?.restaurant_image_url}/${details?.logo}`}
+                                    src={`${details?.logo}`}
                                     width="100px"
                                     smWidth={
                                         scrollPosition === 0

@@ -22,7 +22,7 @@ const RateAndReview = ({
     refetchTrackData,
     is_reviewed,
     is_dm_reviewed,
-                           refetch
+    refetch,
 }) => {
     const { deliveryManInfo } = useSelector((state) => state.searchFilterStore)
     const [type, setType] = useState('items')
@@ -142,7 +142,7 @@ const RateAndReview = ({
                         ))
                     ) : (
                         <Stack width="100%" justifyContent="center">
-                            <CustomEmptyResult label="No Food" />
+                            <CustomEmptyResult label="No Order" />
                         </Stack>
                     )
                 ) : (

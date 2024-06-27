@@ -248,7 +248,7 @@ const SignInPage = ({
                         spacing={{ xs: 1, md: 0 }}
                     >
                         <CustomImageContainer
-                            src={`${businessLogo}/${global?.logo}`}
+                            src={`${global?.logo}`}
                             width="50%"
                             height="70px"
                             alt="Logo"

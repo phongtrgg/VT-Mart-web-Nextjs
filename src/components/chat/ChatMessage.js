@@ -105,11 +105,7 @@ const ChatMessage = (props) => {
             languageDirection={languageDirection}
         >
             <CustomAvatar
-                src={`${
-                    authorType === userType
-                        ? customerImageUrl
-                        : receiverImageUrl()
-                }/${authorType === userType ? senderImage : userImage}`}
+                src={`${authorType === userType ? senderImage : userImage}`}
                 authorType={authorType}
                 userType={userType}
             />
@@ -133,7 +129,7 @@ const ChatMessage = (props) => {
                                 }
                             >
                                 <CustomImageContainer
-                                    src={`${chatImageUrl}/${item}`}
+                                    src={`${item}`}
                                     width="100px"
                                     height="90px"
                                     objectFit="contained"

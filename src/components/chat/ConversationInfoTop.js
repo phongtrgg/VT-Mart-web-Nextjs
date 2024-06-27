@@ -36,7 +36,7 @@ const ConversationInfoTop = ({
                 <IconButton>
                     <Avatar
                         fontSize="small"
-                        src={`${ChatImageUrl()}/${userImage}`}
+                        src={`${userImage}`}
                         sx={{ width: 35, height: 35 }}
                     />
                 </IconButton>

@@ -84,9 +84,9 @@ const InterestOptions = (props) => {
             >
                 {t('Choose Your Interests')}
             </CustomTypographyBold>
-            <CustomTypographyGray variant="h4" nodefaultfont="true">
-                {t('Get personalized food recommendations.')}
-            </CustomTypographyGray>
+            {/* <CustomTypographyGray variant="h4" nodefaultfont="true">
+                {t('Get personalized food recommendations')}
+            </CustomTypographyGray> */}
             <Grid container spacing={2}>
                 {featuredCategories.length > 0 ? (
                     featuredCategories.map((item, index) => {
@@ -119,7 +119,7 @@ const InterestOptions = (props) => {
                                         <CustomImageContainer
                                             height={isSmall ? '100px' : '150px'}
                                             width="100%"
-                                            src={`${global?.base_urls?.category_image_url}/${item.image}`}
+                                            src={`${item.image}`}
                                         />
                                         <CustomTypography>
                                             {item.name}

@@ -53,7 +53,7 @@ const RestaurantReviewModal = ({
             onError: onErrorResponse,
         }
     )
-    console.log({restaurantDetails});
+    console.log({ restaurantDetails })
     const getStart = () => {
         const ratingCounts = {
             one_star: 0,
@@ -104,11 +104,12 @@ const RestaurantReviewModal = ({
         }
     }, [data])
     const getPercentOfNumber = (percentRate) => {
-        const total = restaurantDetails?.ratings.reduce((sum, current) => sum + current, 0);
-        console.log({percentRate});
-        return percentRate
-            ? ((percentRate / total) * 100).toFixed(1)
-            : 0
+        const total = restaurantDetails?.ratings.reduce(
+            (sum, current) => sum + current,
+            0
+        )
+        console.log({ percentRate })
+        return percentRate ? ((percentRate / total) * 100).toFixed(1) : 0
     }
     return (
         <CustomStackFullWidth
@@ -200,7 +201,9 @@ const RestaurantReviewModal = ({
                                     <Box flexGrow={1}>
                                         <BorderLinearProgress
                                             variant="determinate"
-                                            value={restaurantDetails?.ratings[0]}
+                                            value={
+                                                restaurantDetails?.ratings[0]
+                                            }
                                         />
                                     </Box>
                                     <Typography
@@ -222,7 +225,9 @@ const RestaurantReviewModal = ({
                                     <Box flexGrow={1}>
                                         <BorderLinearProgress
                                             variant="determinate"
-                                            value={restaurantDetails?.ratings[1]}
+                                            value={
+                                                restaurantDetails?.ratings[1]
+                                            }
                                         />
                                     </Box>
                                     <Typography
@@ -244,7 +249,9 @@ const RestaurantReviewModal = ({
                                     <Box flexGrow={1}>
                                         <BorderLinearProgress
                                             variant="determinate"
-                                            value={restaurantDetails?.ratings[2]}
+                                            value={
+                                                restaurantDetails?.ratings[2]
+                                            }
                                         />
                                     </Box>
                                     <Typography
@@ -266,7 +273,9 @@ const RestaurantReviewModal = ({
                                     <Box flexGrow={1}>
                                         <BorderLinearProgress
                                             variant="determinate"
-                                            value={restaurantDetails?.ratings[3]}
+                                            value={
+                                                restaurantDetails?.ratings[3]
+                                            }
                                         />
                                     </Box>
                                     <Typography
@@ -288,7 +297,9 @@ const RestaurantReviewModal = ({
                                     <Box flexGrow={1}>
                                         <BorderLinearProgress
                                             variant="determinate"
-                                            value={restaurantDetails?.ratings[4]}
+                                            value={
+                                                restaurantDetails?.ratings[4]
+                                            }
                                         />
                                     </Box>
                                     <Typography
@@ -356,7 +367,7 @@ const RestaurantReviewModal = ({
                                         }}
                                     >
                                         <CustomImageContainer
-                                            src={`${global?.base_urls?.product_image_url}/${review.food_image}`}
+                                            src={`${review.food_image}`}
                                             objectFit="cover"
                                             height="74px"
                                             borderRadius="8px"

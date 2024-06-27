@@ -32,7 +32,7 @@ const OrderHistoryPage = () => {
     const dispatch = useDispatch()
     const theme = useTheme()
     const router = useRouter()
-    const route = router.query;
+    const route = router.query
     const { t } = useTranslation()
     const { global } = useSelector((state) => state.globalSettings)
     const { orderType } = useSelector((state) => state.orderType)
@@ -65,10 +65,12 @@ const OrderHistoryPage = () => {
             <CustomPaperBigCard
                 padding={isXSmall ? '10px 10px' : '30px 40px'}
                 border={false}
-
-                sx={{ minHeight: !isXSmall && '558px', boxShadow: isXSmall && 'unset' }}
+                sx={{
+                    minHeight: !isXSmall && '558px',
+                    boxShadow: isXSmall && 'unset',
+                }}
             >
-                <Grid container spacing={2.4} >
+                <Grid container spacing={2.4}>
                     <Grid item xs={12} sm={12} md={12}>
                         <OutLineGroupButtons
                             handleSelection={handleOrderType}
@@ -109,7 +111,10 @@ const OrderHistoryPage = () => {
                     </Grid>
                     <Grid item xs={12} sm={12} md={12}>
                         {data?.data?.orders?.length === 0 && (
-                            <Stack minHeight="30vh" pt={{ xs: "10px", md: "50px" }}>
+                            <Stack
+                                minHeight="30vh"
+                                pt={{ xs: '10px', md: '50px' }}
+                            >
                                 <CustomEmptyResult
                                     label="No Order found"
                                     image={noOrderFound}
@@ -118,7 +123,6 @@ const OrderHistoryPage = () => {
                                 />
                             </Stack>
                         )}
-
                     </Grid>
                 </Grid>
             </CustomPaperBigCard>

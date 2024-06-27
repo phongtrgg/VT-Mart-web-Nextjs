@@ -1231,7 +1231,7 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                                         <Stack>
                                                             {trackData && (
                                                                 <CustomImageContainer
-                                                                    src={`${deliveryManImage}/${trackData?.data?.delivery_man?.image}`}
+                                                                    src={`${trackData?.data?.delivery_man?.image}`}
                                                                     height="80px"
                                                                     width="80px"
                                                                     borderRadius=".5rem"
@@ -1368,72 +1368,76 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                             )}
                                             {trackData?.data?.payment_method !==
                                                 'offline_payment' && (
-                                                <Stack
-                                                    direction={{
-                                                        xs: 'column',
-                                                        sm: 'row',
-                                                        md: 'row',
-                                                    }}
-                                                    justifyContent="space-between"
-                                                >
-                                                    <Stack direction="row">
-                                                        <Typography
-                                                            color={
-                                                                theme.palette
-                                                                    .neutral[400]
-                                                            }
-                                                            fontSize="14px"
-                                                            fontWeight={400}
-                                                            sx={{
-                                                                textTransform:
-                                                                    'capitalize',
-                                                                wordWrap:
-                                                                    'break-word',
-                                                            }}
-                                                        >
-                                                            {t('Method')}
-                                                        </Typography>
-                                                        <Typography
-                                                            fontSize="14px"
-                                                            fontWeight="400"
-                                                            color={
-                                                                theme.palette
-                                                                    .neutral[400]
-                                                            }
-                                                            sx={{
-                                                                textTransform:
-                                                                    'capitalize',
-                                                                wordWrap:
-                                                                    'break-word',
-                                                            }}
-                                                        >
-                                                            {' '}
-                                                            &nbsp;&nbsp;&nbsp;:
-                                                            &nbsp;&nbsp;{' '}
-                                                            {trackData?.data
-                                                                ?.offline_payment !==
-                                                                null &&
-                                                            trackData?.data
-                                                                ?.payment_method !==
-                                                                'partial_payment'
-                                                                ? `${t(
-                                                                      'Offline Payment'
-                                                                  )} (${
-                                                                      trackData
-                                                                          ?.data
-                                                                          ?.offline_payment
-                                                                          ?.data
-                                                                          ?.method_name
-                                                                  })`
-                                                                : `${t(
-                                                                      trackData
-                                                                          ?.data
-                                                                          ?.payment_method
-                                                                  ).replaceAll(
-                                                                      '_',
-                                                                      ' '
-                                                                  )}`}
-                                                        </Typography>
+                                                <>
+                                                    <Stack
+                                                        direction={{
+                                                            xs: 'column',
+                                                            sm: 'row',
+                                                            md: 'row',
+                                                        }}
+                                                        justifyContent="space-between"
+                                                    >
+                                                        <Stack direction="row">
+                                                            <Typography
+                                                                color={
+                                                                    theme
+                                                                        .palette
+                                                                        .neutral[400]
+                                                                }
+                                                                fontSize="14px"
+                                                                fontWeight={400}
+                                                                sx={{
+                                                                    textTransform:
+                                                                        'capitalize',
+                                                                    wordWrap:
+                                                                        'break-word',
+                                                                }}
+                                                            >
+                                                                {t('Method')}
+                                                            </Typography>
+                                                            <Typography
+                                                                fontSize="14px"
+                                                                fontWeight="400"
+                                                                color={
+                                                                    theme
+                                                                        .palette
+                                                                        .neutral[400]
+                                                                }
+                                                                sx={{
+                                                                    textTransform:
+                                                                        'capitalize',
+                                                                    wordWrap:
+                                                                        'break-word',
+                                                                }}
+                                                            >
+                                                                {' '}
+                                                                &nbsp;&nbsp;&nbsp;:
+                                                                &nbsp;&nbsp;{' '}
+                                                                {trackData?.data
+                                                                    ?.offline_payment !==
+                                                                    null &&
+                                                                trackData?.data
+                                                                    ?.payment_method !==
+                                                                    'partial_payment'
+                                                                    ? `${t(
+                                                                          'Offline Payment'
+                                                                      )} (${
+                                                                          trackData
+                                                                              ?.data
+                                                                              ?.offline_payment
+                                                                              ?.data
+                                                                              ?.method_name
+                                                                      })`
+                                                                    : `${t(
+                                                                          trackData
+                                                                              ?.data
+                                                                              ?.payment_method
+                                                                      ).replaceAll(
+                                                                          '_',
+                                                                          ' '
+                                                                      )}`}
+                                                            </Typography>
+                                                        </Stack>
                                                     </Stack>
                                                     <Stack
                                                         direction="row"
@@ -1517,7 +1521,7 @@ const OrderDetails = ({ OrderIdDigital }) => {
                                                             </Typography>
                                                         )}
                                                     </Stack>
-                                                </Stack>
+                                                </>
                                             )}
                                             {global?.order_delivery_verification && (
                                                 <Stack direction="row">

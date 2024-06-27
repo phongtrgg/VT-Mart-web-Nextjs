@@ -19,8 +19,7 @@ const DeliveryTimeInfo = ({ trackData }) => {
     const theme = useTheme()
     const { t } = useTranslation()
     const today = moment(new Date())
-    const orderPendingTime =deliverymangif
-
+    const orderPendingTime = deliverymangif
 
     const differenceInMinutes = () => {
         const deliveryTime = trackData?.data?.restaurant?.delivery_time
@@ -69,14 +68,33 @@ const DeliveryTimeInfo = ({ trackData }) => {
             </Stack>
 
             <Stack alignItems="center" justifyContent="center" mt="1.5rem">
-                <Typography sx={{fontSize:{xs:"14px",md:"16px"}}} color={theme.palette.neutral[1000]}>
-                    {t('Chef has started cooking')}
+                <Typography
+                    sx={{ fontSize: { xs: '14px', md: '16px' } }}
+                    color={theme.palette.neutral[1000]}
+                >
+                    {t('The order has been prepared')}
                 </Typography>
             </Stack>
             {trackData && (
                 <Stack direction="row" spacing={0.5}>
-                    <Typography sx={{fontSize:{xs:"14px",md:"26px",fontWeight:"700"}}}>{handleTime()}</Typography>
-                    <CustomColouredTypography color="primary" sx={{fontSize:{xs:"14px",md:"26px"},fontWeight:"700"}}>
+                    <Typography
+                        sx={{
+                            fontSize: {
+                                xs: '14px',
+                                md: '26px',
+                                fontWeight: '700',
+                            },
+                        }}
+                    >
+                        {handleTime()}
+                    </Typography>
+                    <CustomColouredTypography
+                        color="primary"
+                        sx={{
+                            fontSize: { xs: '14px', md: '26px' },
+                            fontWeight: '700',
+                        }}
+                    >
                         {t('mins')}
                     </CustomColouredTypography>
                 </Stack>

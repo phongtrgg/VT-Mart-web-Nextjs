@@ -194,7 +194,7 @@ export const baseThemeOptions = {
             styleOverrides: {
                 root: {
                     '&:hover': {
-                        backgroundColor: '#6E726E',
+                        backgroundColor: '#ebfbee',
                     },
                 },
             },

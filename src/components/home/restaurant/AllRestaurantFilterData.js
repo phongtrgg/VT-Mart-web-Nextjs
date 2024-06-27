@@ -1,18 +1,18 @@
 import { t } from 'i18next'
 
 export const AllRestaurantFilterData = [
-    {
-        id: 0,
-        name: t('Veg'),
-        value: 'veg',
-        isActive: false,
-    },
-    {
-        id: 1,
-        name: t('Non-Veg'),
-        value: 'non_veg',
-        isActive: false,
-    },
+    // {
+    //     id: 0,
+    //     name: t('Veg'),
+    //     value: 'veg',
+    //     isActive: false,
+    // },
+    // {
+    //     id: 1,
+    //     name: t('Non-Veg'),
+    //     value: 'non_veg',
+    //     isActive: false,
+    // },
     {
         id: 2,
         name: t('Top Rated'),

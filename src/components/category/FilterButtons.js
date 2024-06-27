@@ -15,10 +15,7 @@ const FilterButtons = ({ setType, type }) => {
             >
                 {t('All')}
             </RestaurantDetailsNavButton>
-            <RestaurantDetailsNavButton
-                // color={
-                //     type === 'veg' ? 'primary' : 'whiteContainer'
-                // }
+            {/* <RestaurantDetailsNavButton
                 className={type === 'veg' ? 'selected-btn' : 'general-btn '}
                 onClick={() => setType('veg')}
                 sx={{ width: { xs: '80px', md: '100px' } }}
@@ -31,7 +28,7 @@ const FilterButtons = ({ setType, type }) => {
                 sx={{ width: { xs: '80px', md: '100px' } }}
             >
                 {t('Non-Veg')}
-            </RestaurantDetailsNavButton>
+            </RestaurantDetailsNavButton> */}
         </ButtonGroup>
     )
 }

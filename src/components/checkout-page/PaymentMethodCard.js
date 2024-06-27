@@ -17,8 +17,8 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControl from '@mui/material/FormControl'
 import { useDispatch } from 'react-redux'
-import { setOfflineInfoStep } from "@/redux/slices/OfflinePayment"
-import test_image from "../../assets/images/footer-logo.png"
+import { setOfflineInfoStep } from '@/redux/slices/OfflinePayment'
+import test_image from '../../assets/images/footer-logo.png'
 
 const PaymentMethodCard = (props) => {
     const {
@@ -36,7 +36,7 @@ const PaymentMethodCard = (props) => {
         selected,
     } = props
     const theme = useTheme()
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const isSmall = useMediaQuery(theme.breakpoints.down('md'))
     const handleChange = () => {
         getPaymentMethod({ name: type, image: image })
@@ -46,7 +46,6 @@ const PaymentMethodCard = (props) => {
     const radioLabel = () => {
         return (
             <Stack
-
                 width="100%"
                 direction="row"
                 gap="16px"
@@ -58,7 +57,7 @@ const PaymentMethodCard = (props) => {
                     width="unset"
                     height="32px"
                     objectfit="contain"
-                    src={`${imageUrl}/${image}`}
+                    src={`${image}`}
                     //test_image={test_image}
                 />
 
@@ -74,9 +73,7 @@ const PaymentMethodCard = (props) => {
     }
     return (
         <Stack>
-            <FormControl
-                sx={{paddingInline: "27px"}}
-            >
+            <FormControl sx={{ paddingInline: '27px' }}>
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     name="radio-buttons-group"

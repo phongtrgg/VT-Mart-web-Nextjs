@@ -141,7 +141,6 @@ const SecondNavbar = ({ isSticky, cartListRefetch }) => {
             dispatch(setOfflineWithPartials(false))
         }
     }, [])
-    console.log(`${userData?.image}`)
     const handleAuthBasedOnRoute = () => {
         return (
             <RTL direction={languageDirection}>

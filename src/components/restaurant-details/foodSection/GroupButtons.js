@@ -4,7 +4,7 @@ import { RestaurantDetailsNavButton } from '../../food-card/FoodCard.style'
 import { ButtonGroup, Tabs } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { makeStyles } from '@mui/styles'
-import {RTL} from "../../RTL/RTL";
+import { RTL } from '../../RTL/RTL'
 
 const useStyles = makeStyles((theme) => ({
     affected: {
@@ -30,42 +30,38 @@ const GroupButtons = ({ setType, type }) => {
 
     return (
         <RTL direction={languageDirection}>
-        <Tabs
-            orientation="horizontal"
-            // variant="contained"
-            variant="scrollable"
-            scrollButtons="auto"
-            aria-label="scrollable auto tabs example"
-        >
-            <ButtonGroup
-                sx={{ borderTopLeftRadius: '30px' }}
-                className={classes.unaffected}
+            <Tabs
+                orientation="horizontal"
+                // variant="contained"
+                variant="scrollable"
+                scrollButtons="auto"
+                aria-label="scrollable auto tabs example"
             >
-                <RestaurantDetailsNavButton
-                    languageDirection={languageDirection}
-                    background={type === 'all'}
-                    onClick={() => setType('all')}
-                    sx={{
-                        width: { xs: '80px', md: '100px' },
-                        // borderTopLeftRadius:
-                        //     languageDirection === 'rtl' ? '0px' : '15px',
-                        // borderTopRightRadius:
-                        //     languageDirection === 'rtl' ? '50px' : '0px',
-                        // borderBottomLeftRadius:
-                        //     languageDirection === 'rtl' ? '0px' : '15px',
-                        // border: '1px solid',
-                        // borderColor: 'primary.main',
-                    }}
-                    // borderRigthTop="20px"
-                    // borderRightBottom="20px"
+                <ButtonGroup
+                    sx={{ borderTopLeftRadius: '30px' }}
+                    className={classes.unaffected}
                 >
-                    {t('All')}
-                </RestaurantDetailsNavButton>
-                <RestaurantDetailsNavButton
-                    // color={
-                    //     type === 'veg' ? 'primary' : 'whiteContainer'
-                    // }languageDirection={languageDirection}
-
+                    <RestaurantDetailsNavButton
+                        languageDirection={languageDirection}
+                        background={type === 'all'}
+                        onClick={() => setType('all')}
+                        sx={{
+                            width: { xs: '80px', md: '100px' },
+                            // borderTopLeftRadius:
+                            //     languageDirection === 'rtl' ? '0px' : '15px',
+                            // borderTopRightRadius:
+                            //     languageDirection === 'rtl' ? '50px' : '0px',
+                            // borderBottomLeftRadius:
+                            //     languageDirection === 'rtl' ? '0px' : '15px',
+                            // border: '1px solid',
+                            // borderColor: 'primary.main',
+                        }}
+                        // borderRigthTop="20px"
+                        // borderRightBottom="20px"
+                    >
+                        {t('All')}
+                    </RestaurantDetailsNavButton>
+                    {/* <RestaurantDetailsNavButton
                     background={type === 'veg'}
                     onClick={() => setType('veg')}
                     sx={{ width: { xs: '80px', md: '100px' } }}
@@ -81,9 +77,9 @@ const GroupButtons = ({ setType, type }) => {
                     borderLeftTop="20px"
                 >
                     {t('Non-Veg')}
-                </RestaurantDetailsNavButton>
-            </ButtonGroup>
-        </Tabs>
+                </RestaurantDetailsNavButton> */}
+                </ButtonGroup>
+            </Tabs>
         </RTL>
     )
 }

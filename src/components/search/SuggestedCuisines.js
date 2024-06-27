@@ -38,7 +38,7 @@ const SuggestedCuisines = ({ routeHandler }) => {
                                         }
                                     >
                                         <CustomImageContainer
-                                            src={`${global?.base_urls?.cuisine_image_url}/${item?.image}`}
+                                            src={`${item?.image}`}
                                             width="57px"
                                             height="57px"
                                             borderRadius="50%"

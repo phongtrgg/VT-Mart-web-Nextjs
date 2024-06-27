@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useFormik } from 'formik'
 import SignUpValidation from '../auth/SignUpValidation'
@@ -7,8 +7,8 @@ import {
     CustomFullDivider,
     CustomStackFullWidth,
     CustomTypographyBold,
-} from "@/styled-components/CustomStyles.style"
-import { Button, Grid, Stack } from "@mui/material";
+} from '@/styled-components/CustomStyles.style'
+import { Button, Grid, Stack } from '@mui/material'
 import { PrimaryButton } from '../products-page/FoodOrRestaurant'
 import LoadingButton from '@mui/lab/LoadingButton'
 import { useTranslation } from 'react-i18next'
@@ -18,13 +18,21 @@ import CustomRatings from '../custom-ratings/CustomRatings'
 import Divider from '@mui/material/Divider'
 import CustomImageContainer from '../CustomImageContainer'
 import { useSelector } from 'react-redux'
-import { getAmount } from "@/utils/customFunctions"
+import { getAmount } from '@/utils/customFunctions'
 import { useMutation } from 'react-query'
 import toast from 'react-hot-toast'
 import { ReviewApi } from './ReviewApi'
 import { onErrorResponse } from '../ErrorResponse'
 
-const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setReviewedItem,refetch}) => {
+const ItemForm = ({
+    data,
+    notNow,
+    id,
+    refetchOrderReview,
+    refetchTrackData,
+    setReviewedItem,
+    refetch,
+}) => {
     const { t } = useTranslation()
 
     const { global } = useSelector((state) => state.globalSettings)
@@ -48,7 +56,6 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
         },
         onSubmit: async (values, helpers) => {
             try {
-
                 handleFormsubmit(values)
             } catch (err) {}
         },
@@ -56,7 +63,7 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
     const handleChangeRatings = (value) => {
         formik.setFieldValue('rating', value)
     }
-    const handleSuccess=(response)=>{
+    const handleSuccess = (response) => {
         setReviewedItem(data)
         refetch()
         // refetchOrderReview()
@@ -75,7 +82,7 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
             order_id: id,
         }
         mutate(formData, {
-            onSuccess:handleSuccess,
+            onSuccess: handleSuccess,
             onError: onErrorResponse,
         })
     }
@@ -102,17 +109,23 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
                                 }
                             >
                                 <CustomImageContainer
-                                    src={`${productImage}/${data?.food_details?.image}`}
+                                    src={`${data?.food_details?.image}`}
                                     width="60px"
                                     height="60px"
                                     borderRadius="5px"
                                     objectFit="cover"
                                 />
                                 <Stack>
-                                    <CustomTypographyBold fontSize="13px" fontWeight="600">
+                                    <CustomTypographyBold
+                                        fontSize="13px"
+                                        fontWeight="600"
+                                    >
                                         {data?.food_details?.name}
                                     </CustomTypographyBold>
-                                    <CustomTypographyBold fontSize="12px" fontWeight="400">
+                                    <CustomTypographyBold
+                                        fontSize="12px"
+                                        fontWeight="400"
+                                    >
                                         {data?.food_details?.restaurant_name}
                                     </CustomTypographyBold>
                                 </Stack>
@@ -122,7 +135,10 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
                                 spacing={0.5}
                                 alignItems="center"
                             >
-                                <CustomTypographyBold fontSize="12px" fontWeight="600">
+                                <CustomTypographyBold
+                                    fontSize="12px"
+                                    fontWeight="600"
+                                >
                                     {getAmount(
                                         data?.food_details?.price,
                                         currencySymbolDirection,
@@ -138,7 +154,10 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
                     </Grid>
                     <Grid item xs={12} md={12} align="center">
                         <Stack alignItems="center">
-                            <CustomTypographyBold fontSize="14px" fontWeight="700">
+                            <CustomTypographyBold
+                                fontSize="14px"
+                                fontWeight="700"
+                            >
                                 {t('Rate the food')}
                             </CustomTypographyBold>
                             <CustomRatings
@@ -149,7 +168,10 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
                     </Grid>
                     <Grid item xs={12} md={12} align="center">
                         <Stack alignItems="center" spacing={1}>
-                            <CustomTypographyGray sx={{ fontSize: '14px' }} fontweight="400">
+                            <CustomTypographyGray
+                                sx={{ fontSize: '14px' }}
+                                fontweight="400"
+                            >
                                 {t('Share your valuable feedback')}
                             </CustomTypographyGray>
                             <CustomTextFieldWithFormik
@@ -176,8 +198,8 @@ const ItemForm = ({ data,notNow,id,refetchOrderReview,refetchTrackData ,setRevie
                             >
                                 {t('Submit')}
                             </LoadingButton>
-                            <Button onClick={()=>notNow(data?.id)}>
-                                {t("Not Now")}
+                            <Button onClick={() => notNow(data?.id)}>
+                                {t('Not Now')}
                             </Button>
                         </Stack>
                     </Grid>

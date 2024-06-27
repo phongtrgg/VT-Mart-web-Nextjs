@@ -26,7 +26,6 @@ const WishListRestaurantCard = ({
     const isXSmall = useMediaQuery(theme.breakpoints.down('sm'))
     const router = useRouter()
     const { name, cover_photo, logo, id, rating_count, address, slug, zone_id } = restaurant
-    const imageUrl = `${restaurantImageUrl}/${logo}`
     const handleClick = () => {
         deleteWishlistRes(id)
     }
@@ -53,7 +52,7 @@ const WishListRestaurantCard = ({
             <Grid container item md={12} xs={12} spacing={{ xs: 1 }} onClick={routeToRestaurant}>
 
                 <Grid item md={4} sm={4} xs={4} >
-                    <CustomImageContainer src={imageUrl} alt={name} maxWidth="120px" smMaxWidth="80px" height="120px" smHeight="80px" objectFit="contained" borderRadius=".7rem" smWidth="80px" />
+                    <CustomImageContainer src={logo} alt={name} maxWidth="120px" smMaxWidth="80px" height="120px" smHeight="80px" objectFit="contained" borderRadius=".7rem" smWidth="80px" />
                 </Grid>
                 <Grid item md={7} sm={6} xs={6} alignSelf="center">
                     <Stack padding=".6rem">

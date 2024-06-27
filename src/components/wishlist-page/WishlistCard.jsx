@@ -39,7 +39,7 @@ const WishlistCard = ({ product, productImageUrl, recommenedproducts }) => {
     const color1 = theme.palette.error.main
     const isXSmall = useMediaQuery(theme.breakpoints.down('sm'))
     const [openModal, setOpenModal] = useState(false)
-    const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl, setAnchorEl] = useState(null)
     const { token } = useSelector((state) => state.userToken)
     const { global } = useSelector((state) => state.globalSettings)
     let currencySymbol
@@ -123,11 +123,11 @@ const WishlistCard = ({ product, productImageUrl, recommenedproducts }) => {
         return !!wishLists?.food?.find((wishFood) => wishFood.id === id)
     }
     const handleClickDelete = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+        setAnchorEl(event.currentTarget)
+    }
     const handleClose = (event) => {
-        setAnchorEl(null);
-    };
+        setAnchorEl(null)
+    }
     return (
         <>
             <WishlistBox sx={{ cursor: 'pointer' }}>
@@ -138,7 +138,7 @@ const WishlistCard = ({ product, productImageUrl, recommenedproducts }) => {
                             sx={{ cursor: 'pointer' }}
                         >
                             <CustomImageContainer
-                                src={imageUrl}
+                                src={image}
                                 alt={name}
                                 maxWidth="120px"
                                 smMaxWidth="80px"
@@ -211,7 +211,7 @@ const WishlistCard = ({ product, productImageUrl, recommenedproducts }) => {
                                 <span
                                     style={{
                                         fontSize: '15px',
-                                        marginInlineStart: "3px"
+                                        marginInlineStart: '3px',
                                     }}
                                 >
                                     {discountPrice &&
@@ -248,9 +248,7 @@ const WishlistCard = ({ product, productImageUrl, recommenedproducts }) => {
                                     )}
                                 </>
                             ) : (
-                                <IconButton
-                                    onClick={handleClickDelete}
-                                >
+                                <IconButton onClick={handleClickDelete}>
                                     <DeleteIcon
                                         sx={{
                                             color: (theme) =>
@@ -313,7 +311,6 @@ const WishlistCard = ({ product, productImageUrl, recommenedproducts }) => {
                     title="Remove this food"
                     subTitle="Want to remove this food your favourite list ?"
                 />
-
             </CustomPopover>
         </>
     )

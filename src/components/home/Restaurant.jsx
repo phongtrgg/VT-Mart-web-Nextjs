@@ -221,7 +221,7 @@ const Restaurant = () => {
                         {getActiveFilter?.map((item, i) => {
                             return (
                                 <CustomChip
-                                    label={item?.name}
+                                    label={t(`${item?.name}`)}
                                     variant="outlined"
                                     onDelete={() => handleDelete(item?.id)}
                                     sx={{

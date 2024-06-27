@@ -1,4 +1,4 @@
-import {alpha, Box, Button, Grid, Stack, Typography} from '@mui/material'
+import { alpha, Box, Button, Grid, Stack, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import location from '../../../assets/images/icons/location.png'
 import favorite from '../../../assets/images/icons/favorite.png'
@@ -42,7 +42,8 @@ const RestaurantTopDetail = ({
     id,
     active,
     open,
-    schedules,cuisine
+    schedules,
+    cuisine,
 }) => {
     const { t } = useTranslation()
     const theme = useTheme()
@@ -171,7 +172,7 @@ const RestaurantTopDetail = ({
                         <CustomImageContainer
                             height="100px"
                             width="100%"
-                            src={`${restaurantImageUrl}/${logo}`}
+                            src={`${logo}`}
                             alt="restaurant"
                             borderRadius=".7rem"
                         />
@@ -188,24 +189,32 @@ const RestaurantTopDetail = ({
                 <Grid item xs={6} sm={8} md={matches ? 8 : 9}>
                     <Stack>
                         <CustomTypography variant="p">{name}</CustomTypography>
-                        <Stack direction="row" spacing={.5} width="100%" flexWrap="wrap">
-                        {cuisine?.map((item,index)=>{
-                            return(
-                                    <CustomTypographyGray variant="p" key={index}
-                                                          sx={{
-                                                              overflow: 'hidden',
-                                                              textOverflow: 'ellipsis',
-                                                              display: '-webkit-box',
-                                                              WebkitLineClamp: '2',
-                                                              WebkitBoxOrient: 'vertical',
-
-
-                                                          }}
+                        <Stack
+                            direction="row"
+                            spacing={0.5}
+                            width="100%"
+                            flexWrap="wrap"
+                        >
+                            {cuisine?.map((item, index) => {
+                                return (
+                                    <CustomTypographyGray
+                                        variant="p"
+                                        key={index}
+                                        sx={{
+                                            overflow: 'hidden',
+                                            textOverflow: 'ellipsis',
+                                            display: '-webkit-box',
+                                            WebkitLineClamp: '2',
+                                            WebkitBoxOrient: 'vertical',
+                                        }}
                                     >
-                                        {item?.name} {(cuisine.length-1)===index ?"":","}
+                                        {item?.name}{' '}
+                                        {cuisine.length - 1 === index
+                                            ? ''
+                                            : ','}
                                     </CustomTypographyGray>
-                            )
-                        })}
+                                )
+                            })}
                         </Stack>
                         <Stack
                             direction="row"
@@ -351,7 +360,7 @@ const RestaurantTopDetail = ({
                             sx={{
                                 cursor: 'pointer',
                                 background: (theme) =>
-                                    alpha(theme.palette.primary.main,.5),
+                                    alpha(theme.palette.primary.main, 0.5),
                                 padding: '8px',
                                 borderRadius: '.5rem',
                                 width: '40px',

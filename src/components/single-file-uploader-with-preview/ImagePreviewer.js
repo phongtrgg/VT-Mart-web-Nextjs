@@ -17,10 +17,8 @@ const ImagePreviewer = ({
     imageUrl,
     borderRadius,
     error,
-    isIcon
+    isIcon,
 }) => {
-
-
     let previewImage
     if (typeof file !== 'string') {
         previewImage = {
@@ -47,7 +45,7 @@ const ImagePreviewer = ({
                             />
                         ) : (
                             <CustomImageContainer
-                                src={`${imageUrl}/${previewImage}`}
+                                src={`${previewImage}`}
                                 alt="preview"
                                 objectFit="cover"
                             />

@@ -6,11 +6,14 @@ import {
     OrderFoodName,
     OrderFoodSubtitle,
 } from '../CheckOut.style'
-import {getAmount, handleTotalAmountWithAddonsFF} from '../../../utils/customFunctions'
+import {
+    getAmount,
+    handleTotalAmountWithAddonsFF,
+} from '../../../utils/customFunctions'
 import { useSelector } from 'react-redux'
 import { ImageSource } from '../../../utils/ImageSource'
-import CustomImageContainer from "../../CustomImageContainer";
-import {Box} from "@mui/system";
+import CustomImageContainer from '../../CustomImageContainer'
+import { Box } from '@mui/system'
 
 const CampaignOrders = ({ global }) => {
     const { campFoodList } = useSelector((state) => state.cart)
@@ -21,16 +24,20 @@ const CampaignOrders = ({ global }) => {
             {campFoodList.map((item) => (
                 <Grid container md={12} xs={12} spacing={{ xs: 1 }}>
                     <Grid item md={4} xs={4}>
-
-                            <CustomImageContainer
-                                height="90px"
-                                width="90px"
-                                src={ImageSource(productBaseUrl, item.image)}
-                                loading="lazy"
-                                borderRadius="10px"
-                            />
+                        <CustomImageContainer
+                            height="90px"
+                            width="90px"
+                            src={item.image}
+                            loading="lazy"
+                            borderRadius="10px"
+                        />
                     </Grid>
-                    <Grid item md={8} xs={8} paddingRight={languageDirection==="rtl" && "10px"}>
+                    <Grid
+                        item
+                        md={8}
+                        xs={8}
+                        paddingRight={languageDirection === 'rtl' && '10px'}
+                    >
                         <OrderFoodName>{item.name}</OrderFoodName>
                         <OrderFoodSubtitle>
                             Qty : {item.quantity}

@@ -2,6 +2,23 @@ export const english = {
     english: 'English',
     vietnamese: 'Vietnamese',
     only: 'only',
+    'Quick View': 'Quick View',
+    'Add to wishlist': 'Add to wishlist',
+    'No Transaction History': 'No Transaction History',
+    'Use your wallet funds when placing an order.':
+        'Use your wallet funds when placing an order.',
+    'Admin also rewards top customers with wallet funds.':
+        'Admin also rewards top customers with wallet funds.',
+    'Earn money for your wallet by completing offers and challenges.':
+        'Earn money for your wallet by completing offers and challenges.',
+    'Convert your loyalty points into wallet funds.':
+        'Convert your loyalty points into wallet funds.',
+    'Not Now': 'Not Now',
+    'Please add your address for better experience!':
+        'Please add your address for better experience!',
+    'Give your valuable feedback!': 'Give your valuable feedback!',
+    'Submit Request': 'Submit Request',
+    'Choose Your Interests': 'Choose Your Interests',
     'No Restaurants found': 'No Restaurants found',
     'No category found': 'No category found',
     'items available': 'items available',
@@ -20,7 +37,7 @@ export const english = {
     'Please add manually or collect promo from':
         'Please add manually or collect promo from',
     'Payment Verification Failed !': 'Payment Verification Failed !',
-    'Chef has started cooking': 'Chef has started cooking ',
+    'The order has been prepared': 'The order has been prepared',
     'Tell us what’s wrong with the order ?':
         'Tell us what’s wrong with the order ?',
     'You payment is declined by admin. Please contact with admin for further query':
@@ -853,7 +870,7 @@ export const english = {
     '...Read more': '...Read more',
     'Add fund by from secured digital payment gateways':
         'Add fund by from secured digital payment gateways',
-    'Faster & secure way to pay bill': 'Faster & secure way to pay bill',
+    '(Faster & secure way to pay bill)': 'Faster & secure way to pay bill',
     'Payment Methods': 'Payment Methods',
     'Subscription Order': 'Subscription Order',
     'Choose a delivery time': 'Choose a delivery time',

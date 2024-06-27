@@ -75,13 +75,13 @@ const RegularOrders = (props) => {
                                     borderBottomLeftRadius: '10px',
                                 }}
                             >
-                                <Typography
+                                {/* <Typography
                                     variant="h5"
                                     align="center"
                                     color={theme.palette.neutral[100]}
                                 >
                                     {item?.veg === 0 ? t('non-veg') : t('veg')}
-                                </Typography>
+                                </Typography> */}
                             </Stack>
                         </Stack>
 
