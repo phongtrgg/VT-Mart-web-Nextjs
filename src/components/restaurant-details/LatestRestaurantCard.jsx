@@ -377,7 +377,8 @@ const LatestRestaurantCard = (props) => {
                                         >
                                             {foods_count.length > 99
                                                 ? `${foods_count}+`
-                                                : `${foods_count}` + `items`}
+                                                : `${foods_count} ` +
+                                                  t(`Items`)}
                                         </Typography>
                                     </Stack>
                                 </Stack>

@@ -2,6 +2,7 @@ export const english = {
     english: 'English',
     vietnamese: 'Vietnamese',
     only: 'only',
+    'Remove from wishlist': 'Remove from wishlist',
     'Quick View': 'Quick View',
     'Add to wishlist': 'Add to wishlist',
     'No Transaction History': 'No Transaction History',

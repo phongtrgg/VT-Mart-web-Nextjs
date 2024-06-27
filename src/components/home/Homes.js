@@ -210,13 +210,13 @@ const Homes = ({ configData }) => {
                         </Typography>
                     </CustomStackFullWidth>
                 </CustomContainer>
-                <SearchFilterTag
+                {/* <SearchFilterTag
                     sort_by={sort_by}
                     setSort_by={setSort_by}
                     tags={tags}
                     query={query}
                     page={page}
-                />
+                /> */}
                 {query || page || restaurantType || tags ? (
                     <CustomContainer>
                         <ProductSearchPage
@@ -310,7 +310,7 @@ const Homes = ({ configData }) => {
                         </Box>
                     </Box>
                 </CustomModal>
-                {getToken && <CashBackPopup />}
+                {/* {getToken && <CashBackPopup />} */}
             </PushNotificationLayout>
         </>
     )

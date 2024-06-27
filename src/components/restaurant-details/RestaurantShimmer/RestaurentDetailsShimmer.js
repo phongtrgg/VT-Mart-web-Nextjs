@@ -36,7 +36,7 @@ const RestaurantDetailsShimmer = ({ showComponent }) => {
                 </Grid>
             ) : (
                 <CustomEmptyResult
-                    label="No Food Found"
+                    label="No food found"
                     objectfit="contain"
                     image={noFoodFoundImage}
                 />
