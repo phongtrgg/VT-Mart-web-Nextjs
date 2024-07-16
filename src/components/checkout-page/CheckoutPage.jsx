@@ -102,7 +102,7 @@ export const handleValuesFromCartItems = (variationValues) => {
     return value
 }
 export const handleIdsFromCartItems = (variationValues) => {
-    console.log({variationValues});
+    console.log({ variationValues })
     let value = []
     if (variationValues?.length > 0) {
         variationValues?.forEach((item) => {
@@ -113,7 +113,7 @@ export const handleIdsFromCartItems = (variationValues) => {
     } else {
         variationValues && value.push(variationValues[0]?.option_id)
     }
-    console.log( {value});
+    console.log({ value })
     return value
 }
 const CheckoutPage = () => {
@@ -243,7 +243,7 @@ const CheckoutPage = () => {
             onError: onErrorResponse,
         }
     )
-    console.log({restaurantData});
+    console.log({ restaurantData })
     const tempDistance =
         distanceData?.data?.rows?.[0]?.elements[0]?.distance?.value / 1000
 
@@ -1201,7 +1201,8 @@ const CheckoutPage = () => {
                                 </Box>
                             )}
 
-                            {(restaurantData?.data?.is_extra_packaging_active && global?.extra_packaging_charge)
+                            {restaurantData?.data?.is_extra_packaging_active &&
+                            global?.extra_packaging_charge
                                 ? !restaurantData?.data
                                       ?.extra_packaging_status &&
                                   restaurantData?.data

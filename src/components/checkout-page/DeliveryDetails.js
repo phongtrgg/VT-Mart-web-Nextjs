@@ -9,12 +9,12 @@ import DeliveryAddress from './DeliveryAddress'
 import {
     CustomPaperBigCard,
     CustomStackFullWidth,
-} from "@/styled-components/CustomStyles.style"
+} from '@/styled-components/CustomStyles.style'
 import OrderType from './order-type'
 import AdditionalAddresses from './AdditionalAddresses'
-import { Typography } from "@mui/material";
-import CheckoutSelectedAddressGuest from "./guest-user/CheckoutSelectedAddressGuest";
-import { getToken } from "./functions/getGuestUserId";
+import { Typography } from '@mui/material'
+import CheckoutSelectedAddressGuest from './guest-user/CheckoutSelectedAddressGuest'
+import { getToken } from './functions/getGuestUserId'
 
 const DeliveryDetails = (props) => {
     const {
@@ -33,7 +33,8 @@ const DeliveryDetails = (props) => {
         setPaymenMethod,
         setPaymentMethodDetails,
         setUsePartialPayment,
-        setSwitchToWallet, token
+        setSwitchToWallet,
+        token,
     } = props
     const { t } = useTranslation()
     const handleChange = (e) => {
@@ -54,7 +55,8 @@ const DeliveryDetails = (props) => {
                 <FormControl>
                     {page !== 'campaign' &&
                         global?.cash_on_delivery &&
-                        restaurantData?.data?.order_subscription_active && getToken() && (
+                        restaurantData?.data?.order_subscription_active &&
+                        getToken() && (
                             <OrderType
                                 t={t}
                                 subscriptionStates={subscriptionStates}
@@ -72,10 +74,10 @@ const DeliveryDetails = (props) => {
                         global?.home_delivery) ||
                         (restaurantData?.data?.take_away &&
                             global?.take_away)) && (
-                            <DeliveryCaption id="demo-row-radio-buttons-group-label">
-                                {t('Delivery Options')}
-                            </DeliveryCaption>
-                        )}
+                        <DeliveryCaption id="demo-row-radio-buttons-group-label">
+                            {t('Delivery Options')}
+                        </DeliveryCaption>
+                    )}
 
                     {restaurantData?.data && (
                         <RadioGroup
@@ -105,7 +107,10 @@ const DeliveryDetails = (props) => {
                     )}
                 </FormControl>
                 {!token ? (
-                    <CheckoutSelectedAddressGuest address={address} orderType={orderType} />
+                    <CheckoutSelectedAddressGuest
+                        address={address}
+                        orderType={orderType}
+                    />
                 ) : (
                     <>
                         {orderType && orderType !== 'take_away' && (
@@ -118,17 +123,22 @@ const DeliveryDetails = (props) => {
                                 restaurantId={restaurantData?.data?.zone_id}
                                 token={token}
                             />
-                        )}</>)}
+                        )}
+                    </>
+                )}
 
-                {getToken() &&
+                {getToken() && (
                     <AdditionalAddresses
                         orderType={orderType}
                         t={t}
-                        additionalInformationStates={additionalInformationStates}
+                        additionalInformationStates={
+                            additionalInformationStates
+                        }
                         additionalInformationDispatch={
                             additionalInformationDispatch
                         }
-                    />}
+                    />
+                )}
             </CustomStackFullWidth>
         </CustomPaperBigCard>
     )
